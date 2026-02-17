@@ -47,6 +47,15 @@ $pageContent = str_replace(
   $pageContent
 );
 
+/* ABOUT */
+$pageContent = str_replace(
+  '{{SECTION_ABOUT}}',
+  file_get_contents(
+    $root . "/templates/sections/about/{$config['about']['aboutVariant']}.html"
+  ),
+  $pageContent
+);
+
 /* SERVICES */
 $pageContent = str_replace(
   '{{SECTION_SERVICES}}',
@@ -227,10 +236,16 @@ $replacements = [
   '{{HERO_CTA_LABEL}}'    => $config['hero']['cta']['label'] ?? '',
   '{{HERO_CTA_URL}}'      => $config['hero']['cta']['url'] ?? '',
 
+  // ABOUT
+  '{{ABOUT_VARIANT}}'    => $config['about']['aboutVariant'] ?? '',
+  '{{ABOUT_HEADLINE}}'    => $config['about']['headline'] ?? '', 
+  '{{ABOUT_DESCRIPTION}}'  => $config['about']['description'] ?? '',
+  '{{ABOUT_IMAGE}}'        => $config['about']['image'] ?? '',
+
   // CTA
   '{{CTA_HEADLINE}}'      => $config['cta']['headline'] ?? '',
   '{{CTA_BUTTON_LABEL}}'  => $config['cta']['button']['label'] ?? '',
-  '{{CTA_BUTTON_URL}}'    => $config['cta']['button']['url'] ?? ''
+  '{{CTA_BUTTON_URL}}'    => $config['cta']['button']['url'] ?? '',
 ];
 
 $html = str_replace(

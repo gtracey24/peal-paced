@@ -1,6 +1,6 @@
 {
 "site": {
-  "name": "Acme Web Design",
+  "name": "Peal Paced Running Club",
   "language": "en"
 }
 ,
@@ -15,16 +15,16 @@
 "design": {
   "theme": "friendly",
   "stylesheet": "friendly-startup.css",
-  "heroVariant": "carded",
+  "heroVariant": "split-reverse",
   "serviceStyle": "service-card-simple",
   "processStyle": "process-wide"
 }
 ,
 
   "hero": {
-    "headline": "Build Your Online Presence",
-    "subheadline": "Clean, fast websites for modern businesses",
-    "image": "/assets/images/hero.png",
+    "headline": "Run with purpose.</br>Train with clarity.",
+    "subheadline": "Guidance that simplifies the process and strengthens your stride",
+    "image": "/assets/images/peal-logo.png",
     "cta": {
       "label": "Get Started",
       "url": "#contact"
@@ -100,6 +100,13 @@
     "description": "We finalize, test, and deploy your project so it’s ready for real‑world use."
   }
 ],
+
+"about": {
+  "aboutVariant": "about-circle",
+  "headline": "About Me",
+  "image": "/assets/images/peal-running-1.jpg",
+  "description": "I’m a web designer and developer with a passion for creating clean, effective websites that help entrepreneurs succeed online. With a background in both design and development, I understand how to build sites that look great and perform well. I’m dedicated to making the process simple and enjoyable for my clients, so you can focus on what you do best while I take care of your online presence."
+},
 
 "footer": {
   "text": "© 2026 Your Business. All rights reserved.",
