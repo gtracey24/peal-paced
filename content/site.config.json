@@ -1,0 +1,115 @@
+{
+"site": {
+  "name": "Acme Web Design",
+  "language": "en"
+}
+,
+
+"seo": {
+  "title": "Clean Websites for Modern Businesses",
+  "description": "Professional, fast-loading websites for entrepreneurs starting their online presence.",
+  "canonical": "https://example.com/",
+  "ogImage": "/assets/og-image.png"
+},
+
+"design": {
+  "theme": "friendly",
+  "stylesheet": "friendly-startup.css",
+  "heroVariant": "carded",
+  "serviceStyle": "service-card-simple",
+  "processStyle": "process-wide"
+}
+,
+
+  "hero": {
+    "headline": "Build Your Online Presence",
+    "subheadline": "Clean, fast websites for modern businesses",
+    "image": "/assets/images/hero.png",
+    "cta": {
+      "label": "Get Started",
+      "url": "#contact"
+    }
+  },
+
+  "cta": {
+    "headline": "Ready to launch?",
+    "button": {
+      "label": "Contact Me",
+      "url": "#contact"
+    }
+  },
+
+  "navigation": [
+    
+  {
+    "label": "Services",
+    "url": "#services"
+  },
+  {
+    "label": "Process",
+    "url": "#process"
+  },
+  {
+    "label": "Contact",
+    "url": "#contact"
+  }
+],
+
+"services": [
+  {
+    "title": "Web Design",
+    "description": "Clean, professional websites built for clarity and conversion.",
+    "icon": "bi-layout-text-window"
+  },
+  {
+    "title": "SEO Foundations",
+    "description": "Search-friendly structure and metadata baked in from day one.",
+    "icon": "bi-graph-up"
+  },
+  {
+    "title": "Performance Optimization",
+    "description": "Fast-loading pages that keep users engaged.",
+    "icon": "bi-speedometer2"
+  }
+],
+
+"process": [
+  {
+    "number": "01",
+    "title": "Discovery",
+    "description": "We dig into your goals, challenges, and vision to understand what success looks like."
+  },
+  {
+      "number": "02",
+    "title": "Planning",
+    "description": "We map out the structure, timeline, and requirements to ensure a smooth, predictable build."
+  },
+  {
+      "number": "03",
+    "title": "Design",
+    "description": "We shape the look, feel, and flow so everything is clear, intuitive, and on‑brand."
+  },
+  {
+      "number": "04",
+    "title": "Build",
+    "description": "We bring the plan to life with efficient development and attention to detail."
+  },
+  {
+      "number": "05",
+    "title": "Launch",
+    "description": "We finalize, test, and deploy your project so it’s ready for real‑world use."
+  }
+],
+
+"footer": {
+  "text": "© 2026 Your Business. All rights reserved.",
+  "links": [
+    { "label": "Privacy", "url": "/privacy.html" },
+    { "label": "Terms", "url": "/terms.html" }
+  ]
+}
+
+
+
+
+}

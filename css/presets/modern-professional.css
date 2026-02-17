@@ -1,0 +1,35 @@
+/* ------------------------------------------------------------
+   MODERN PROFESSIONAL
+------------------------------------------------------------ */
+
+.theme-modern {
+  --bs-primary: #1f2937;
+  --bs-primary-rgb: 31, 41, 55;
+
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #111827;
+
+  --bs-border-radius: 0.375rem;
+  --bs-body-font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Navigation */
+.theme-modern .navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Hero */
+.theme-modern .hero {
+  background-color: #f9fafb;
+}
+
+
+/* Buttons */
+.theme-modern .btn-primary {
+  font-weight: 500;
+}
+
+body {
+  background: hotpink !important;
+}

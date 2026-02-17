@@ -1,0 +1,9 @@
+{
+  "client": "Acme Consulting",
+  "preset": "modern-professional",
+  "palette": "navy-teal",
+  "fonts": "inter-clean",
+  "hero": "split",
+  "buttons": "rounded",
+  "imagery": "real-people"
+}
