@@ -6,11 +6,12 @@
   --bs-primary: #6366f1;
   --bs-primary-rgb: 99, 102, 241;
 
-  --bs-body-bg: #ffffff;
+  --bs-body-bg: #deea38;
   --bs-body-color: #1f2937;
 
   --bs-border-radius: 0.75rem;
-  --bs-body-font-family: 'Poppins', system-ui, sans-serif;
+  --bs-body-font-family: 'Lucida bright', system-ui, sans-serif;
+  
 }
 
 /* Navigation */
@@ -29,5 +30,6 @@
 
 /* Buttons */
 .theme-friendly .btn-primary {
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+  /* box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25); */
 }
+

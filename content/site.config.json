@@ -55,23 +55,21 @@
   }
 ],
 
-"services": [
-  {
-    "title": "Web Design",
-    "description": "Clean, professional websites built for clarity and conversion.",
-    "icon": "bi-layout-text-window"
-  },
-  {
-    "title": "SEO Foundations",
-    "description": "Search-friendly structure and metadata baked in from day one.",
-    "icon": "bi-graph-up"
-  },
-  {
-    "title": "Performance Optimization",
-    "description": "Fast-loading pages that keep users engaged.",
-    "icon": "bi-speedometer2"
-  }
-],
+  "services": [
+    {
+      "title": "Personalized Training Path",
+      "description": "A plan built around your life, not someone else’s pace. We map out clear weekly steps, adjust for real-world demands, and build a rhythm you can actually sustain. Consistency becomes automatic when the plan fits who you are."
+    },
+    {
+      "title": "Purposeful Workouts",
+      "description": "Every run has a job. Easy days build your engine, workouts sharpen your speed, and recovery keeps you progressing. You will always know why you are doing something and how it moves you forward."
+    },
+    {
+      "title": "Measurable, Momentum-Building Progress",
+      "description": "We track the right metrics, celebrate the right wins, and refine the plan as you grow. Small improvements stack into breakthroughs when you follow a system designed for long-term success."
+    }
+  ]
+,
 
 "process": [
   {
