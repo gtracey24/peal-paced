@@ -32,7 +32,7 @@
   },
 
   "cta": {
-    "headline": "Ready to launch?",
+    "headline": "Ready to run?",
     "button": {
       "label": "Contact Me",
       "url": "#contact"
@@ -100,10 +100,10 @@
 ],
 
 "about": {
-  "aboutVariant": "about-circle",
-  "headline": "About Me",
+  "aboutVariant": "about-left-image",
+  "headline": "About Peal Paced Running Club",
   "image": "/assets/images/peal-running-1.jpg",
-  "description": "I’m a web designer and developer with a passion for creating clean, effective websites that help entrepreneurs succeed online. With a background in both design and development, I understand how to build sites that look great and perform well. I’m dedicated to making the process simple and enjoyable for my clients, so you can focus on what you do best while I take care of your online presence."
+  "description": "Jake Peal has raced everything from local 5Ks to the Boston Marathon, and he brings that experience straight into his coaching. He’s spent years training high school and junior‑high runners, teaching them how to run smarter, stay consistent, and enjoy the sport. Peal Paced Track Club is his way of sharing that passion with every athlete."
 },
 
 "footer": {

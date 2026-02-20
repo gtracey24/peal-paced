@@ -69,7 +69,17 @@
   <body class="theme-friendly">
   <!-- HERO -->
 <header class="hero-split-reverse py-5">
-  <div class="container">
+  <div 
+    class="container p-5 shadow-sm border rounded-4 hero-animate"
+    style="
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(6px);
+
+      /* TEXTURE */
+background-image: radial-gradient(rgba(0,0,0,0.18) 1.2px, transparent 1.2px);
+background-size: 20px 20px;
+    "
+  >
     <div class="row align-items-center">
 
       <div class="col-md-6 text-center mb-4 mb-md-0">
@@ -94,28 +104,40 @@
 </header>
 
 <!-- SERVICES_START -->
-<section id="services" class="container py-5">
+<section id="services" class="container py-5 fade-scroll">
   <h2 class="mb-4">What we offer</h2>
   <div class="row">
-    <div class="col-md-4 mb-4">
-  <div class="card h-100 text-center">
-    <div class="card-body">
-      <h3 class="card-title">Personalized Training Path</h3>
-      <p class="card-text">A plan built around your life, not someone else’s pace. We map out clear weekly steps, adjust for real-world demands, and build a rhythm you can actually sustain. Consistency becomes automatic when the plan fits who you are.</p>
+    <div class="col-md-6 mb-5">
+  <div class="card h-100 text-center p-4 shadow-lg" style="min-height: 360px;">
+    <div class="card-body d-flex flex-column justify-content-center">
+      <h2 class="card-title mb-3" style="font-size: 2rem;">
+        Personalized Training Path
+      </h2>
+      <p class="card-text" style="font-size: 1.25rem; line-height: 1.6;">
+        A plan built around your life, not someone else’s pace. We map out clear weekly steps, adjust for real-world demands, and build a rhythm you can actually sustain. Consistency becomes automatic when the plan fits who you are.
+      </p>
     </div>
   </div>
-</div><div class="col-md-4 mb-4">
-  <div class="card h-100 text-center">
-    <div class="card-body">
-      <h3 class="card-title">Purposeful Workouts</h3>
-      <p class="card-text">Every run has a job. Easy days build your engine, workouts sharpen your speed, and recovery keeps you progressing. You will always know why you are doing something and how it moves you forward.</p>
+</div><div class="col-md-6 mb-5">
+  <div class="card h-100 text-center p-4 shadow-lg" style="min-height: 360px;">
+    <div class="card-body d-flex flex-column justify-content-center">
+      <h2 class="card-title mb-3" style="font-size: 2rem;">
+        Purposeful Workouts
+      </h2>
+      <p class="card-text" style="font-size: 1.25rem; line-height: 1.6;">
+        Every run has a job. Easy days build your engine, workouts sharpen your speed, and recovery keeps you progressing. You will always know why you are doing something and how it moves you forward.
+      </p>
     </div>
   </div>
-</div><div class="col-md-4 mb-4">
-  <div class="card h-100 text-center">
-    <div class="card-body">
-      <h3 class="card-title">Measurable, Momentum-Building Progress</h3>
-      <p class="card-text">We track the right metrics, celebrate the right wins, and refine the plan as you grow. Small improvements stack into breakthroughs when you follow a system designed for long-term success.</p>
+</div><div class="col-md-6 mb-5">
+  <div class="card h-100 text-center p-4 shadow-lg" style="min-height: 360px;">
+    <div class="card-body d-flex flex-column justify-content-center">
+      <h2 class="card-title mb-3" style="font-size: 2rem;">
+        Measurable, Momentum-Building Progress
+      </h2>
+      <p class="card-text" style="font-size: 1.25rem; line-height: 1.6;">
+        We track the right metrics, celebrate the right wins, and refine the plan as you grow. Small improvements stack into breakthroughs when you follow a system designed for long-term success.
+      </p>
     </div>
   </div>
 </div>
@@ -125,7 +147,7 @@
 <!-- SERVICES_END -->
 
 <!-- PROCESS_START -->
-<section id="process" class="container py-5 bg-light">
+<section id="process" class="container py-5 bg-light fade-scroll">
   <h2 class="mb-4">How It Works</h2>
   <div class="row">
     <section class="process-wide py-5">
@@ -159,9 +181,37 @@
 
 <!-- PROCESS_END -->
 
+<!-- ABOUT START -->
+ <section class="about py-5 fade-scroll">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- IMAGE + HEADLINE COLUMN -->
+      <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+        <img
+          src="/assets/images/peal-running-1.jpg"
+          alt="About image"
+          class="rounded-circle"
+          style="width: 320px; height: 320px; object-fit: cover;"
+        />
+        <h2 class="mt-3">About Peal Paced Running Club</h2>
+      </div>
+
+      <!-- DESCRIPTION COLUMN -->
+      <div class="col-md-8">
+        <p class="lead">
+          Jake Peal has raced everything from local 5Ks to the Boston Marathon, and he brings that experience straight into his coaching. He’s spent years training high school and junior‑high runners, teaching them how to run smarter, stay consistent, and enjoy the sport. Peal Paced Track Club is his way of sharing that passion with every athlete.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ABOUT END -->
+
 <!-- CTA_START -->
 <section class="container py-5 text-center">
-  <h2>Ready to launch?</h2>
+  <h2>Ready to run?</h2>
   <a href="#contact" class="btn btn-primary mt-3">
     Contact Me
   </a>
