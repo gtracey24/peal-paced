@@ -70,6 +70,13 @@ $pageContent = str_replace(
   $pageContent
 );
 
+/* GALLERY */
+$pageContent = str_replace(
+  '{{SECTION_GALLERY}}',
+  file_get_contents($root . '/templates/sections/gallery.html'),
+  $pageContent
+);
+
 /* CTA */
 $pageContent = str_replace(
   '{{SECTION_CTA}}',

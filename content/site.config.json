@@ -17,7 +17,8 @@
   "stylesheet": "friendly-startup.css",
   "heroVariant": "split-reverse",
   "serviceStyle": "service-card-simple",
-  "processStyle": "process-wide"
+  "processStyle": "process-wide",
+  "galleryStyle": "gallery-three-classic"
 }
 ,
 
@@ -96,6 +97,21 @@
       "number": "05",
     "title": "Launch",
     "description": "We finalize, test, and deploy your project so it’s ready for real‑world use."
+  }
+],
+
+"gallery": [
+  {
+    "image": "/assets/images/peal-running-2.jpg",
+    "caption": "Peal leading a group run in the park."
+  },
+  {
+    "image": "/assets/images/peal-running-3.jpg",
+    "caption": "A training session focused on speed work."
+  },
+  {
+    "image": "/assets/images/peal-running-4.jpg",
+    "caption": "Celebrating a successful race finish with the team."
   }
 ],
 
