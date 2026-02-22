@@ -132,6 +132,27 @@ $pageContent = str_replace(
   $pageContent
 );
 
+/* GALLERY ITEMS */
+$galleryHtml = '';
+$galleryItemTemplate = file_get_contents(
+  $root . "/templates/components/gallery/{$config['design']['galleryStyle']}.html"
+);
+if (!empty($config['gallery'])) {
+  foreach ($config['gallery'] as $item) {
+    $galleryHtml .= str_replace(
+      ['{{GALLERY_IMAGE}}', '{{GALLERY_CAPTION}}'],
+      [$item['image'], $item['caption']],
+      $galleryItemTemplate
+    );
+  }
+}
+
+$pageContent = str_replace(
+  '{{GALLERY_ITEMS}}',
+  $galleryHtml,
+  $pageContent
+);
+
 
 /* ============================================================
  * PHASE 3: WRAP PAGE CONTENT WITH LAYOUT

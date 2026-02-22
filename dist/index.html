@@ -28,7 +28,7 @@
 </head>
 <body data-preset="{{DESIGN_PRESET}}">
 
-<nav class="navbar navbar-expand-lg container py-3">
+<nav class="navbar navbar-expand-lg container p-3">
   <a class="navbar-brand fw-bold" href="/">Peal Paced Running Club</a>
 
   <button
@@ -72,12 +72,11 @@
   <div 
     class="container p-5 shadow-sm border rounded-4 hero-animate"
     style="
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(6px);
-
-      /* TEXTURE */
-background-image: radial-gradient(rgba(0,0,0,0.18) 1.2px, transparent 1.2px);
-background-size: 20px 20px;
+      background-image: url(/assets/images/track-1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
     "
   >
     <div class="row align-items-center">
@@ -92,11 +91,13 @@ background-size: 20px 20px;
       </div>
 
       <div class="col-md-6">
-        <h1 class="display-4 mb-3">Run with purpose.</br>Train with clarity.</h1>
-        <p class="lead mb-4">Guidance that simplifies the process and strengthens your stride</p>
-        <a href="#contact" class="btn btn-primary">
-          Get Started
-        </a>
+        <div class="hero-text-gradient p-4 rounded-4">
+          <h1 class="display-4 mb-3">Run with purpose.</br>Train with clarity.</h1>
+          <p class="lead mb-4">Guidance that simplifies the process and strengthens your stride</p>
+          <a href="#contact" class="btn btn-primary">
+            Get Started
+          </a>
+        </div>
       </div>
 
     </div>
@@ -186,7 +187,34 @@ background-size: 20px 20px;
 <!-- TESTIMONIALS_END -->
 
 <!-- GALLERY START -->
+<div class="section-spacer"></div>
+<section class="py-5 bg-light">
+  
+  <div class="container-fluid px-0 fade-scroll">
 
+    <div class="gallery-strip d-flex flex-wrap justify-content-center">
+      <div class="gallery-strip-item gallery-tilt-in p-3">
+  <img 
+    src="/assets/images/peal-running-2.jpg" 
+    alt="Peal leading a group run in the park." 
+    class="w-100 h-100 object-fit-cover"
+  >
+</div><div class="gallery-strip-item gallery-tilt-in p-3">
+  <img 
+    src="/assets/images/peal-running-3.jpg" 
+    alt="A training session focused on speed work." 
+    class="w-100 h-100 object-fit-cover"
+  >
+</div><div class="gallery-strip-item gallery-tilt-in p-3">
+  <img 
+    src="/assets/images/peal-running-4.jpg" 
+    alt="Celebrating a successful race finish with the team." 
+    class="w-100 h-100 object-fit-cover"
+  >
+</div>
+    </div>
+  </div>
+</section>
 <!-- GALLERY END -->
 
 <!-- ABOUT START -->
