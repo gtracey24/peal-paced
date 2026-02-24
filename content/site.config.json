@@ -149,6 +149,13 @@
       "avatar": "/assets/images/james.jpg"
     }
   ]
+},
+
+"form": {
+  "variant": "form-basic",
+  "headline": "Get in Touch",
+  "action": "/contact-submit",
+  "buttonLabel": "Send Message"
 }
 
 

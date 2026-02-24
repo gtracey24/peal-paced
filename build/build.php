@@ -93,6 +93,15 @@ $pageContent = str_replace(
   $pageContent
 );
 
+/* FORM */
+$pageContent = str_replace(
+  '{{SECTION_FORM}}',
+  file_get_contents(
+    $root . "/templates/sections/form/{$config['form']['variant']}.html"
+  ),
+  $pageContent
+);
+
 /* ============================================================
  * PHASE 2: COMPONENT INJECTION (repeatable blocks)
  * ============================================================ */
@@ -313,7 +322,12 @@ $replacements = [
 '{{TESTIMONIALS_VARIANT}}' => $config['testimonials']['variant'] ?? '',
 '{{TESTIMONIALS_HEADLINE}}' => $config['testimonials']['headline'] ?? '',
 
-  // CTA
+// FORM
+'{{FORM_HEADLINE}}' => $config['form']['headline'] ?? '',
+'{{FORM_ACTION}}' => $config['form']['action'] ?? '',
+'{{FORM_BUTTON_LABEL}}' => $config['form']['buttonLabel'] ?? 'Submit',
+
+// CTA
   '{{CTA_HEADLINE}}'      => $config['cta']['headline'] ?? '',
   '{{CTA_BUTTON_LABEL}}'  => $config['cta']['button']['label'] ?? '',
   '{{CTA_BUTTON_URL}}'    => $config['cta']['button']['url'] ?? '',
@@ -323,7 +337,6 @@ $html = str_replace(
   array_values($replacements),
   $html
 );
-
 
 /* ============================================================
  * PHASE 6: OUTPUT
