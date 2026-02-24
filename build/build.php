@@ -84,6 +84,15 @@ $pageContent = str_replace(
   $pageContent
 );
 
+/* TESTIMONIALS */
+$pageContent = str_replace(
+  '{{SECTION_TESTIMONIALS}}',
+  file_get_contents(
+    $root . "/templates/sections/testimonials/{$config['testimonials']['variant']}.html"
+  ),
+  $pageContent
+);
+
 /* ============================================================
  * PHASE 2: COMPONENT INJECTION (repeatable blocks)
  * ============================================================ */
@@ -153,6 +162,37 @@ $pageContent = str_replace(
   $pageContent
 );
 
+/* TESTIMONIAL ITEMS */
+$testimonialHtml = '';
+$testimonialTemplate = file_get_contents(
+  $root . "/templates/components/testimonials/{$config['testimonials']['itemStyle']}.html"
+);
+
+if (!empty($config['testimonials']['items'])) {
+  foreach ($config['testimonials']['items'] as $t) {
+    $testimonialHtml .= str_replace(
+      [
+        '{{TESTIMONIAL_TEXT}}',
+        '{{TESTIMONIAL_AUTHOR}}',
+        '{{TESTIMONIAL_ROLE}}',
+        '{{TESTIMONIAL_AVATAR}}'
+      ],
+      [
+        $t['text'],
+        $t['author'],
+        $t['role'],
+        $t['avatar'] ?? ''
+      ],
+      $testimonialTemplate
+    );
+  }
+}
+
+$pageContent = str_replace(
+  '{{TESTIMONIAL_ITEMS}}',
+  $testimonialHtml,
+  $pageContent
+);
 
 /* ============================================================
  * PHASE 3: WRAP PAGE CONTENT WITH LAYOUT
@@ -255,7 +295,6 @@ $replacements = [
   '{{STYLESHEET}}'        => $config['design']['stylesheet'] ?? 'main.css',
   '{{THEME_CLASS}}' => 'theme-' . ($config['design']['theme'] ?? 'modern'),
 
-
   // Hero
   '{{HERO_VARIANT}}'     => $config['design']['heroVariant'] ?? '',
   '{{HERO_HEADLINE}}'     => $config['hero']['headline'] ?? '',
@@ -270,12 +309,15 @@ $replacements = [
   '{{ABOUT_DESCRIPTION}}'  => $config['about']['description'] ?? '',
   '{{ABOUT_IMAGE}}'        => $config['about']['image'] ?? '',
 
+// TESTIMONIALS
+'{{TESTIMONIALS_VARIANT}}' => $config['testimonials']['variant'] ?? '',
+'{{TESTIMONIALS_HEADLINE}}' => $config['testimonials']['headline'] ?? '',
+
   // CTA
   '{{CTA_HEADLINE}}'      => $config['cta']['headline'] ?? '',
   '{{CTA_BUTTON_LABEL}}'  => $config['cta']['button']['label'] ?? '',
   '{{CTA_BUTTON_URL}}'    => $config['cta']['button']['url'] ?? '',
 ];
-
 $html = str_replace(
   array_keys($replacements),
   array_values($replacements),

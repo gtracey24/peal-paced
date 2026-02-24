@@ -18,7 +18,8 @@
   "heroVariant": "split-reverse",
   "serviceStyle": "service-card-simple",
   "processStyle": "process-wide",
-  "galleryStyle": "gallery-hero-full"
+  "galleryStyle": "gallery-hero-full",
+  "testimonialStyle": "testimonial-quote"
 }
 ,
 
@@ -128,9 +129,27 @@
     { "label": "Privacy", "url": "/privacy.html" },
     { "label": "Terms", "url": "/terms.html" }
   ]
+},
+
+"testimonials": {
+  "headline": "What People Say",
+  "variant": "testimonials-spotlight",
+  "itemStyle": "spotlight",
+  "items": [
+    {
+      "text": "Grant transformed our entire workflow.",
+      "author": "Sarah M.",
+      "role": "Founder, BrightPath",
+      "avatar": "/assets/images/sarah.jpg"
+    },
+    {
+      "text": "Clean, modern, and fast. Exactly what we needed.",
+      "author": "James R.",
+      "role": "Creative Director",
+      "avatar": "/assets/images/james.jpg"
+    }
+  ]
 }
-
-
 
 
 }
