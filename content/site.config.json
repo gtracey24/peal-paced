@@ -154,7 +154,7 @@
 "form": {
   "variant": "form-basic",
   "headline": "Get in Touch",
-  "action": "/contact-submit",
+  "action": "/form-handler.php",
   "buttonLabel": "Send Message"
 }
 

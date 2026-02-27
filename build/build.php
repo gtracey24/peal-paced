@@ -102,6 +102,13 @@ $pageContent = str_replace(
   $pageContent
 );
 
+/* FAQ */
+$pageContent = str_replace(
+  '{{SECTION_FAQ}}',
+  file_get_contents($root . '/templates/sections/faq.html'),
+  $pageContent
+);
+
 /* ============================================================
  * PHASE 2: COMPONENT INJECTION (repeatable blocks)
  * ============================================================ */
@@ -200,6 +207,26 @@ if (!empty($config['testimonials']['items'])) {
 $pageContent = str_replace(
   '{{TESTIMONIAL_ITEMS}}',
   $testimonialHtml,
+  $pageContent
+);
+
+/* FAQ ITEMS */
+$faqHtml = '';
+$faqItemTemplate = file_get_contents(
+  $root . "/templates/components/faq/faq-item.html"
+);
+if (!empty($config['faq'])) {
+  foreach ($config['faq'] as $item) {
+    $faqHtml .= str_replace(
+      ['{{FAQ_QUESTION}}', '{{FAQ_ANSWER}}'],
+      [$item['question'], $item['answer']],
+      $faqItemTemplate
+    );
+  }
+}
+$pageContent = str_replace(
+  '{{FAQ_ITEMS}}',
+  $faqHtml,
   $pageContent
 );
 

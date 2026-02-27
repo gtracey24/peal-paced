@@ -1,0 +1,5 @@
+{
+  "fiveServer.phpExecutable": "C:/php/php.exe",
+  "fiveServer.enablePhp": true,
+  "fiveServer.root": "dist"
+}
