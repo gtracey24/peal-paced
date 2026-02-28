@@ -118,3 +118,25 @@ body.theme-friendly .testimonial-carousel-item {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
 }
+
+/* CTA */
+  .btn-text-us {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #2563eb;
+    color: #ffffff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    transition: transform 0.1s ease;
+  }
+
+  .btn-text-us:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+  }
+
+  .btn-text-us:active {
+    transform: translateY(0);
+  }
