@@ -1,10 +1,23 @@
-{{PARTIAL_HEAD}}
-{{PARTIAL_NAV}}
+<!DOCTYPE html>
+<html lang="{{SITE_LANGUAGE}}">
+<head>
+  {{PARTIAL_HEAD}}
+</head>
 
-<main id="content">
-  <body class="{{THEME_CLASS}}">
-  {{PAGE_CONTENT}}
+<body class="{{THEME_CLASS}}">
+
+  <!-- Background layers -->
+  <div class="parallax-texture"></div>
+  <div class="frosted-layer"></div>
+
+  <!-- Site chrome -->
+  {{PARTIAL_NAV}}
+
+  <main id="content">
+    {{PAGE_CONTENT}}
+  </main>
+
+  {{PARTIAL_FOOTER}}
+
 </body>
-</main>
-
-{{PARTIAL_FOOTER}}
+</html>

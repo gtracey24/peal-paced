@@ -1,73 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Clean Websites for Modern Businesses</title>
-  <meta name="description" content="Professional, fast-loading websites for entrepreneurs starting their online presence." />
-  <link rel="canonical" href="https://example.com/" />
+<title>Clean Websites for Modern Businesses</title>
+<meta name="description" content="Professional, fast-loading websites for entrepreneurs starting their online presence." />
+<link rel="canonical" href="https://example.com/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Clean Websites for Modern Businesses" />
-  <meta property="og:description" content="Professional, fast-loading websites for entrepreneurs starting their online presence." />
-  <meta property="og:image" content="/assets/og-image.png" />
-  <meta property="og:url" content="https://example.com/" />
+<!-- Open Graph -->
+<meta property="og:title" content="Clean Websites for Modern Businesses" />
+<meta property="og:description" content="Professional, fast-loading websites for entrepreneurs starting their online presence." />
+<meta property="og:image" content="/assets/og-image.png" />
+<meta property="og:url" content="https://example.com/" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/presets/friendly-startup.css" />
-  <!-- <link rel="stylesheet" href="/css/presets/modern-professional.css">
-  <link rel="stylesheet" href="/css/presets/friendly-startup.css">
-  <link rel="stylesheet" href="/css/presets/bold-local.css">
-  <link rel="stylesheet" href="/css/presets/minimal-elegant.css"> -->
-
+<!-- CSS -->
+<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/presets/friendly-startup.css" />
 </head>
-<body data-preset="{{DESIGN_PRESET}}">
 
-<nav class="navbar navbar-expand-lg container p-3">
+<body class="theme-friendly">
+
+  <!-- Background layers -->
+  <div class="parallax-texture"></div>
+  <div class="frosted-layer"></div>
+
+  <!-- Site chrome -->
+  <nav class="navbar navbar-expand-lg container p-3">
   <a class="navbar-brand fw-bold" href="/">Peal Paced Running Club</a>
 
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#mainNav"
-    aria-controls="mainNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="mainNav">
     <ul class="navbar-nav ms-auto">
-      <li class="nav-item">
-  <a class="nav-link" href="#services">
-    Services
-  </a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="#process">
-    Process
-  </a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="#contact">
-    Contact
-  </a>
-</li>
-
+      <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-
-<main id="content">
-  <body class="theme-friendly">
-  <!-- HERO -->
+  <main id="content">
+    <!-- HERO -->
 <header class="hero-split-reverse py-5">
   <div 
     class="container p-5 shadow-sm border rounded-4 hero-animate"
@@ -83,7 +61,7 @@
 
       <div class="col-md-6 text-center mb-4 mb-md-0">
         <img 
-          src="/assets/images/peal-logo.png" 
+          src="/assets/images/logo_no_background.png" 
           alt="" 
           class="img-fluid"
           loading="eager"
@@ -148,7 +126,7 @@
 <!-- SERVICES_END -->
 
 <!-- PROCESS_START -->
-<section id="process" class="container py-5 bg-light fade-scroll">
+<!-- <section id="process" class="container py-5 bg-light fade-scroll">
   <h2 class="mb-4">How It Works</h2>
   <div class="row">
     <section class="process-wide py-5">
@@ -179,7 +157,7 @@
 </section>
   </div>
 </section>
-
+ -->
 <!-- PROCESS_END -->
 
 <!-- TESTIMONIALS_START -->
@@ -192,7 +170,7 @@
   <div class="p-4 rounded shadow-sm h-100 testimonial-card text-center">
 
     <img 
-      src="/assets/images/sarah.jpg" 
+      src="/peal-paced/assets/images/sarah.jpg" 
       alt="Sarah M." 
       class="rounded shadow mb-3"
       style="width: 100%; max-width: 260px; height: 320px; object-fit: cover; border-radius: 12px;"
@@ -264,7 +242,7 @@
       <!-- IMAGE + HEADLINE COLUMN -->
       <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
         <img
-          src="/assets/images/peal-running-1.jpg"
+          src="peal-paced/assets/images/peal-running-1.jpg"
           alt="About image"
           class="rounded-circle"
           style="width: 320px; height: 320px; object-fit: cover;"
@@ -284,53 +262,12 @@
 </section>
 <!-- ABOUT END -->
 
-<!-- FORM START -->
- <section class="py-5 fade-in">
-  <div class="container" style="max-width: 600px;">
-    <h2 class="text-center fw-bold mb-4">Get in Touch</h2>
 
-    <form action="/utilites/form-handler.php" method="POST" class="form-card p-4 rounded shadow-sm">
 
-      <div class="mb-3">
-        <label class="form-label">Name</label>
-        <input type="text" name="name" class="form-control" required>
-      </div>
 
-      <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-control" required>
-      </div>
+  </main>
 
-      <div class="mb-3">
-        <label class="form-label">Message</label>
-        <textarea name="message" class="form-control" rows="4" required></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary w-100">Send Message</button>
-
-    </form>
-  </div>
-</section>
-<!-- FORM END -->   
-
-<!-- CTA_START -->
-<section class="container py-5 text-center">
-  <h2>Ready to run?</h2>
-  <a href="#contact" class="btn btn-primary mt-3">
-    Contact Me
-  </a>
-</section>
-
-<!-- CTA_END -->
-
-<!-- FAQ START -->
-
-<!-- FAQ END -->
-
-</body>
-</main>
-
-<footer class="site-footer container py-4">
+  <footer class="site-footer container py-4">
   <div class="row">
     <div class="col-md-6">
       <p>© 2026 Your Business. All rights reserved.</p>
@@ -350,3 +287,6 @@
   </div>
 </footer>
 
+
+</body>
+</html>

@@ -1,38 +1,32 @@
 {
-"site": {
-  "name": "Peal Paced Running Club",
-  "language": "en"
-}
-,
-
-"seo": {
-  "title": "Clean Websites for Modern Businesses",
-  "description": "Professional, fast-loading websites for entrepreneurs starting their online presence.",
-  "canonical": "https://example.com/",
-  "ogImage": "/assets/og-image.png"
-},
-
-"design": {
-  "theme": "friendly",
-  "stylesheet": "friendly-startup.css",
-  "heroVariant": "split-reverse",
-  "serviceStyle": "service-card-simple",
-  "processStyle": "process-wide",
-  "galleryStyle": "gallery-hero-full",
-  "testimonialStyle": "testimonial-quote"
-}
-,
-
+  "site": {
+    "name": "Peal Paced Running Club",
+    "language": "en"
+  },
+  "seo": {
+    "title": "Clean Websites for Modern Businesses",
+    "description": "Professional, fast-loading websites for entrepreneurs starting their online presence.",
+    "canonical": "https://example.com/",
+    "ogImage": "/assets/og-image.png"
+  },
+  "design": {
+    "theme": "friendly",
+    "stylesheet": "friendly-startup.css",
+    "heroVariant": "split-reverse",
+    "serviceStyle": "service-card-simple",
+    "processStyle": "process-wide",
+    "galleryStyle": "gallery-hero-full",
+    "testimonialStyle": "testimonial-quote"
+  },
   "hero": {
     "headline": "Run with purpose.</br>Train with clarity.",
     "subheadline": "Guidance that simplifies the process and strengthens your stride",
-    "image": "/assets/images/peal-logo.png",
+    "image": "/assets/images/logo_no_background.png",
     "cta": {
       "label": "Get Started",
       "url": "#contact"
     }
   },
-
   "cta": {
     "headline": "Ready to run?",
     "button": {
@@ -40,23 +34,20 @@
       "url": "#contact"
     }
   },
-
   "navigation": [
-    
-  {
-    "label": "Services",
-    "url": "#services"
-  },
-  {
-    "label": "Process",
-    "url": "#process"
-  },
-  {
-    "label": "Contact",
-    "url": "#contact"
-  }
-],
-
+    {
+      "label": "Services",
+      "url": "#services"
+    },
+    {
+      "label": "Process",
+      "url": "#process"
+    },
+    {
+      "label": "Contact",
+      "url": "#contact"
+    }
+  ],
   "services": [
     {
       "title": "Personalized Training Path",
@@ -70,93 +61,90 @@
       "title": "Measurable, Momentum-Building Progress",
       "description": "We track the right metrics, celebrate the right wins, and refine the plan as you grow. Small improvements stack into breakthroughs when you follow a system designed for long-term success."
     }
-  ]
-,
-
-"process": [
-  {
-    "number": "01",
-    "title": "Discovery",
-    "description": "We dig into your goals, challenges, and vision to understand what success looks like."
-  },
-  {
-      "number": "02",
-    "title": "Planning",
-    "description": "We map out the structure, timeline, and requirements to ensure a smooth, predictable build."
-  },
-  {
-      "number": "03",
-    "title": "Design",
-    "description": "We shape the look, feel, and flow so everything is clear, intuitive, and on‑brand."
-  },
-  {
-      "number": "04",
-    "title": "Build",
-    "description": "We bring the plan to life with efficient development and attention to detail."
-  },
-  {
-      "number": "05",
-    "title": "Launch",
-    "description": "We finalize, test, and deploy your project so it’s ready for real‑world use."
-  }
-],
-
-"gallery": [
-  {
-    "image": "/assets/images/peal-running-2.jpg",
-    "caption": "Peal leading a group run in the park."
-  },
-  {
-    "image": "/assets/images/peal-running-3.jpg",
-    "caption": "A training session focused on speed work."
-  },
-  {
-    "image": "/assets/images/peal-running-4.jpg",
-    "caption": "Celebrating a successful race finish with the team."
-  }
-],
-
-"about": {
-  "aboutVariant": "about-left-image",
-  "headline": "About Peal Paced Running Club",
-  "image": "/assets/images/peal-running-1.jpg",
-  "description": "Jake Peal has raced everything from local 5Ks to the Boston Marathon, and he brings that experience straight into his coaching. He’s spent years training high school and junior‑high runners, teaching them how to run smarter, stay consistent, and enjoy the sport. Peal Paced Track Club is his way of sharing that passion with every athlete."
-},
-
-"footer": {
-  "text": "© 2026 Your Business. All rights reserved.",
-  "links": [
-    { "label": "Privacy", "url": "/privacy.html" },
-    { "label": "Terms", "url": "/terms.html" }
-  ]
-},
-
-"testimonials": {
-  "headline": "What People Say",
-  "variant": "testimonials-spotlight",
-  "itemStyle": "spotlight",
-  "items": [
+  ],
+  "process": [
     {
-      "text": "Grant transformed our entire workflow.",
-      "author": "Sarah M.",
-      "role": "Founder, BrightPath",
-      "avatar": "/assets/images/sarah.jpg"
+      "number": "01",
+      "title": "Discovery",
+      "description": "We dig into your goals, challenges, and vision to understand what success looks like."
     },
     {
-      "text": "Clean, modern, and fast. Exactly what we needed.",
-      "author": "James R.",
-      "role": "Creative Director",
-      "avatar": "/assets/images/james.jpg"
+      "number": "02",
+      "title": "Planning",
+      "description": "We map out the structure, timeline, and requirements to ensure a smooth, predictable build."
+    },
+    {
+      "number": "03",
+      "title": "Design",
+      "description": "We shape the look, feel, and flow so everything is clear, intuitive, and on‑brand."
+    },
+    {
+      "number": "04",
+      "title": "Build",
+      "description": "We bring the plan to life with efficient development and attention to detail."
+    },
+    {
+      "number": "05",
+      "title": "Launch",
+      "description": "We finalize, test, and deploy your project so it’s ready for real‑world use."
     }
-  ]
-},
-
-"form": {
-  "variant": "form-basic",
-  "headline": "Get in Touch",
-  "action": "/form-handler.php",
-  "buttonLabel": "Send Message"
-}
-
-
+  ],
+  "gallery": [
+    {
+      "image": "/assets/images/peal-running-2.jpg",
+      "caption": "Peal leading a group run in the park."
+    },
+    {
+      "image": "/assets/images/peal-running-3.jpg",
+      "caption": "A training session focused on speed work."
+    },
+    {
+      "image": "/assets/images/peal-running-4.jpg",
+      "caption": "Celebrating a successful race finish with the team."
+    }
+  ],
+  "about": {
+    "aboutVariant": "about-left-image",
+    "headline": "About Peal Paced Running Club",
+    "image": "peal-paced/assets/images/peal-running-1.jpg",
+    "description": "Jake Peal has raced everything from local 5Ks to the Boston Marathon, and he brings that experience straight into his coaching. He’s spent years training high school and junior‑high runners, teaching them how to run smarter, stay consistent, and enjoy the sport. Peal Paced Track Club is his way of sharing that passion with every athlete."
+  },
+  "footer": {
+    "text": "© 2026 Your Business. All rights reserved.",
+    "links": [
+      {
+        "label": "Privacy",
+        "url": "/privacy.html"
+      },
+      {
+        "label": "Terms",
+        "url": "/terms.html"
+      }
+    ]
+  },
+  "testimonials": {
+    "headline": "What People Say",
+    "variant": "testimonials-spotlight",
+    "itemStyle": "spotlight",
+    "items": [
+      {
+        "text": "Grant transformed our entire workflow.",
+        "author": "Sarah M.",
+        "role": "Founder, BrightPath",
+        "avatar": "/peal-paced/assets/images/sarah.jpg"
+      },
+      {
+        "text": "Clean, modern, and fast. Exactly what we needed.",
+        "author": "James R.",
+        "role": "Creative Director",
+        "avatar": "/assets/images/james.jpg"
+      }
+    ]
+  },
+  "form": {
+    "variant": "form-basic",
+    "headline": "Get in Touch",
+    "action": "/form-handler.php",
+    "buttonLabel": "Send Message"
+  }
 }

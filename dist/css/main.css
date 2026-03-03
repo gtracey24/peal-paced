@@ -1,14 +1,55 @@
+/* ------------------------------------------------------------
+   BACKGROUND STACK (Parallax + Frosted Glass)
+------------------------------------------------------------ */
+.background-stack {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
 
-/* GALLERY STRIP */
+.parallax-texture {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/grain.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.35;
+}
+
+.frosted-layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
+}
+
+/* Ensure all content sits above background layers */
+body > *:not(.background-stack) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------
+   BASE BACKGROUND (kept as-is)
+------------------------------------------------------------ */
+body {
+  background: linear-gradient(to bottom right, #e0f7fa, #cfd8dc);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ------------------------------------------------------------
+   GALLERY STRIP
+------------------------------------------------------------ */
 .gallery-strip-item {
   width: 25%;
-  /* 4 images per row on desktop */
   min-width: 200px;
-  /* prevents tiny images on small screens */
   height: 600px;
-  /* strip height */
   overflow: hidden;
 }
+
 .gallery-fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -38,10 +79,12 @@
 @media (max-width: 768px) {
   .gallery-strip-item {
     width: 50%;
-    /* 2 per row on mobile */
   }
 }
 
+/* ------------------------------------------------------------
+   HERO
+------------------------------------------------------------ */
 .hero-text-gradient {
   background: linear-gradient(
     to right,
@@ -52,7 +95,9 @@
   max-width: 600px;
 }
 
-/* SPACING */
+/* ------------------------------------------------------------
+   SPACING
+------------------------------------------------------------ */
 .hairline {
   border: none;
   border-top: 0.5px solid rgba(0,0,0,0.12);
@@ -63,12 +108,15 @@
   height: 40px;
 }
 
-/* ABOUT */
+/* ------------------------------------------------------------
+   ABOUT
+------------------------------------------------------------ */
 .about-card {
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.2);
 }
+
 body.theme-friendly .about-card {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
@@ -82,6 +130,7 @@ body.theme-friendly .about-card {
   );
   border-radius: var(--bs-border-radius);
 }
+
 body.theme-friendly .about-feature {
   background: linear-gradient(
     135deg,
@@ -90,11 +139,14 @@ body.theme-friendly .about-feature {
   );
 }
 
-/* TESTIMONIALS */
+/* ------------------------------------------------------------
+   TESTIMONIALS
+------------------------------------------------------------ */
 .testimonial-card {
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(6px);
 }
+
 body.theme-friendly .testimonial-card {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
@@ -104,6 +156,7 @@ body.theme-friendly .testimonial-card {
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(8px);
 }
+
 body.theme-friendly .testimonial-spotlight {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
@@ -114,7 +167,32 @@ body.theme-friendly .testimonial-spotlight {
   backdrop-filter: blur(10px);
   border-radius: var(--bs-border-radius);
 }
+
 body.theme-friendly .testimonial-carousel-item {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ------------------------------------------------------------
+   CTA BUTTON
+------------------------------------------------------------ */
+.btn-text-us {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: transform 0.1s ease;
+}
+
+.btn-text-us:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-text-us:active {
+  transform: translateY(0);
 }
