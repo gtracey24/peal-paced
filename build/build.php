@@ -122,8 +122,8 @@ $serviceTemplate = file_get_contents(
 if (!empty($config['services'])) {
   foreach ($config['services'] as $service) {
     $servicesHtml .= str_replace(
-      ['{{SERVICE_TITLE}}', '{{SERVICE_DESCRIPTION}}', '{{SERVICE_ICON}}'],
-      [$service['title'], $service['description'], $service['icon']],
+      ['{{SERVICE_TITLE}}', '{{SERVICE_DESCRIPTION}}', '{{SERVICE_ICON}}', '{{SERVICE_GRADIENT'],
+      [$service['title'], $service['description'], $service['icon'], $service['gradient']],
       $serviceTemplate
     );
   }

@@ -1,6 +1,6 @@
 {
   "site": {
-    "name": "Peal Paced Running Club",
+    "name": "Peal Paced Track Club",
     "language": "en"
   },
   "seo": {
@@ -51,6 +51,8 @@
   "services": [
     {
       "title": "Personalized Training Path",
+      "gradient":"linear-gradient(135deg, #00c6ff, #0072ff)",
+
       "description": "A plan built around your life, not someone else’s pace. We map out clear weekly steps, adjust for real-world demands, and build a rhythm you can actually sustain. Consistency becomes automatic when the plan fits who you are."
     },
     {
@@ -105,8 +107,8 @@
   ],
   "about": {
     "aboutVariant": "about-left-image",
-    "headline": "About Peal Paced Running Club",
-    "image": "peal-paced/assets/images/peal-running-1.jpg",
+    "headline": "About Peal Paced Track Club",
+    "image": "/assets/images/peal-running-1.jpg",
     "description": "Jake Peal has raced everything from local 5Ks to the Boston Marathon, and he brings that experience straight into his coaching. He’s spent years training high school and junior‑high runners, teaching them how to run smarter, stay consistent, and enjoy the sport. Peal Paced Track Club is his way of sharing that passion with every athlete."
   },
   "footer": {

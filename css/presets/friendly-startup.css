@@ -114,3 +114,16 @@ body.theme-friendly .btn-primary {
 .hero-animate {
   animation: heroFloatIn 1s ease-out forwards;
 }
+
+.service-card-gradient {
+  border: none;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  background-size: 200% 200%;
+  transition: background-position 0.6s ease;
+}
+
+.service-card-gradient:hover {
+  background-position: right center;
+}
