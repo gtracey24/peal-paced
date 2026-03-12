@@ -13,7 +13,7 @@
     "theme": "friendly",
     "stylesheet": "friendly-startup.css",
     "heroVariant": "split-reverse",
-    "serviceStyle": "service-card-simple",
+    "serviceStyle": "service-card-icon",
     "processStyle": "process-wide",
     "galleryStyle": "gallery-hero-full",
     "testimonialStyle": "testimonial-quote"
@@ -52,15 +52,17 @@
     {
       "title": "Personalized Training Path",
       "gradient":"linear-gradient(135deg, #00c6ff, #0072ff)",
-
+      "icon": "bi-clipboard-check",
       "description": "A plan built around your life, not someone else’s pace. We map out clear weekly steps, adjust for real-world demands, and build a rhythm you can actually sustain. Consistency becomes automatic when the plan fits who you are."
     },
     {
       "title": "Purposeful Workouts",
+      "icon": "bi-stopwatch",
       "description": "Every run has a job. Easy days build your engine, workouts sharpen your speed, and recovery keeps you progressing. You will always know why you are doing something and how it moves you forward."
     },
     {
       "title": "Measurable, Momentum-Building Progress",
+      "icon": "bi-bar-chart",
       "description": "We track the right metrics, celebrate the right wins, and refine the plan as you grow. Small improvements stack into breakthroughs when you follow a system designed for long-term success."
     }
   ],
@@ -107,7 +109,7 @@
   ],
   "about": {
     "aboutVariant": "about-left-image",
-    "headline": "About Peal Paced Track Club",
+    "headline": "Meet Jake Peal",
     "image": "/assets/images/peal-running-1.jpg",
     "description": "Jake Peal has raced everything from local 5Ks to the Boston Marathon, and he brings that experience straight into his coaching. He’s spent years training high school and junior‑high runners, teaching them how to run smarter, stay consistent, and enjoy the sport. Peal Paced Track Club is his way of sharing that passion with every athlete."
   },
