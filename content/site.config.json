@@ -14,7 +14,7 @@
     "stylesheet": "friendly-startup.css",
     "heroVariant": "split-reverse",
     "serviceStyle": "service-card-icon",
-    "processStyle": "process-wide",
+    "processStyle": "package-wide",
     "galleryStyle": "gallery-hero-full",
     "testimonialStyle": "testimonial-quote"
   },

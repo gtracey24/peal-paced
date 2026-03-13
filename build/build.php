@@ -65,8 +65,8 @@ $pageContent = str_replace(
 
 /* PROCESS */
 $pageContent = str_replace(
-  '{{SECTION_PROCESS}}',
-  file_get_contents($root . '/templates/sections/process.html'),
+  '{{SECTION_PACKAGE}}',
+  file_get_contents($root . '/templates/sections/package.html'),
   $pageContent
 );
 
@@ -135,24 +135,45 @@ $pageContent = str_replace(
   $pageContent
 );
 
-/* PROCESS ITEMS */
+/* TRAINING PACKAGES */
 $processHtml = '';
 $processTemplate = file_get_contents(
-  $root . "/templates/components/processes/{$config['design']['processStyle']}.html"
+  $root . "/templates/components/packages/{$config['design']['processStyle']}.html"
 );
 
-if (!empty($config['process'])) {
-  foreach ($config['process'] as $step) {
+if (!empty($config['training_packages'])) {
+  foreach ($config['training_packages'] as $step) {
+
+    // Convert focus array into a bullet list or comma-separated string
+    $focusList = '';
+    if (!empty($step['focus']) && is_array($step['focus'])) {
+      $focusList = implode(', ', $step['focus']);
+    }
+
     $processHtml .= str_replace(
-      ['{{PROCESS_TITLE}}', '{{PROCESS_DESCRIPTION}}'],
-      [$step['title'], $step['description']],
+      [
+        '{{PACKAGE_TITLE}}',
+        '{{PACKAGE_DESCRIPTION}}',
+        '{{PACKAGE_NUMBER}}',
+        '{{PACKAGE_TAGLINE}}',
+        '{{PACKAGE_DURATION}}',
+        '{{PACKAGE_FOCUS}}'
+      ],
+      [
+        $step['title'],
+        $step['description'],
+        $step['number'],
+        $step['tagline'],
+        $step['duration'],
+        $focusList
+      ],
       $processTemplate
     );
   }
 }
 
 $pageContent = str_replace(
-  '{{PROCESS_STEPS}}',
+  '{{PACKAGE_STEPS}}',
   $processHtml,
   $pageContent
 );
