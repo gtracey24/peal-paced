@@ -66,33 +66,49 @@
       "description": "We track the right metrics, celebrate the right wins, and refine the plan as you grow. Small improvements stack into breakthroughs when you follow a system designed for long-term success."
     }
   ],
-  "process": [
+ "training_packages": [
     {
       "number": "01",
-      "title": "Discovery",
-      "description": "We dig into your goals, challenges, and vision to understand what success looks like."
+      "title": "Foundation 5K Program",
+      "tagline": "Build confidence, consistency, and smart running habits.",
+      "duration": "8 Weeks",
+      "focus": [
+        "Progressive weekly structure",
+        "3–4 runs per week",
+        "Form cues + warm‑ups",
+        "Optional strength add‑ons"
+      ],
+      "description": "A beginner‑friendly path that builds confidence, consistency, and smart running habits."
     },
     {
       "number": "02",
-      "title": "Planning",
-      "description": "We map out the structure, timeline, and requirements to ensure a smooth, predictable build."
+      "title": "Half‑Marathon Build Cycle",
+      "tagline": "Run strong from start to finish.",
+      "duration": "12 Weeks",
+      "focus": [
+        "Long‑run progression",
+        "Tempo + threshold workouts",
+        "Fueling guidance",
+        "Race‑day pacing strategy"
+      ],
+      "description": "A balanced, purposeful training cycle designed to help you run strong from start to finish."
     },
     {
       "number": "03",
-      "title": "Design",
-      "description": "We shape the look, feel, and flow so everything is clear, intuitive, and on‑brand."
-    },
-    {
-      "number": "04",
-      "title": "Build",
-      "description": "We bring the plan to life with efficient development and attention to detail."
-    },
-    {
-      "number": "05",
-      "title": "Launch",
-      "description": "We finalize, test, and deploy your project so it’s ready for real‑world use."
+      "title": "Speed & Strength Block",
+      "tagline": "Sharpen speed and break plateaus.",
+      "duration": "6 Weeks",
+      "focus": [
+        "Interval + hill sessions",
+        "Strength + mobility routines",
+        "Weekly progress checkpoints",
+        "Efficiency + power development"
+      ],
+      "description": "A focused block that builds power, speed, and efficiency for your next breakthrough."
     }
-  ],
+  ]
+
+,
   "gallery": [
     {
       "image": "/assets/images/peal-running-2.jpg",
