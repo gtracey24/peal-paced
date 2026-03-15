@@ -14,7 +14,7 @@
     "stylesheet": "friendly-startup.css",
     "heroVariant": "split-reverse",
     "serviceStyle": "service-card-icon",
-    "processStyle": "package-wide",
+    "processStyle": "default",
     "galleryStyle": "gallery-hero-full",
     "testimonialStyle": "testimonial-quote"
   },
@@ -66,47 +66,51 @@
       "description": "We track the right metrics, celebrate the right wins, and refine the plan as you grow. Small improvements stack into breakthroughs when you follow a system designed for long-term success."
     }
   ],
- "training_packages": [
+  "training_packages": [
     {
       "number": "01",
-      "title": "Foundation 5K Program",
-      "tagline": "Build confidence, consistency, and smart running habits.",
-      "duration": "8 Weeks",
+      "title": "Base Training",
+      "tagline": "Build your aerobic engine",
+      "duration": "8–12 weeks",
       "focus": [
-        "Progressive weekly structure",
-        "3–4 runs per week",
-        "Form cues + warm‑ups",
-        "Optional strength add‑ons"
+        "Easy‑run consistency",
+        "Aerobic development",
+        "Light workouts",
+        "Foundational mileage"
       ],
-      "description": "A beginner‑friendly path that builds confidence, consistency, and smart running habits."
+      "description": "Build aerobic strength, consistency, and foundational mileage with structured easy runs and light workouts.",
+      "gradient": "linear-gradient(135deg, #0a84ff15, #ffd60a15)"
     },
     {
       "number": "02",
-      "title": "Half‑Marathon Build Cycle",
-      "tagline": "Run strong from start to finish.",
-      "duration": "12 Weeks",
+      "title": "Race Prep",
+      "tagline": "Sharpen for your target race",
+      "duration": "6–10 weeks",
       "focus": [
-        "Long‑run progression",
-        "Tempo + threshold workouts",
-        "Fueling guidance",
-        "Race‑day pacing strategy"
+        "Race‑pace workouts",
+        "Long‑run structure",
+        "Pacing strategy",
+        "Fueling practice"
       ],
-      "description": "A balanced, purposeful training cycle designed to help you run strong from start to finish."
+      "description": "Dial in pacing, workouts, and long‑run structure to peak for your target race with confidence.",
+      "gradient": "linear-gradient(135deg, rgba(0,122,255,0.12), rgba(135,206,250,0.12))"
     },
     {
       "number": "03",
-      "title": "Speed & Strength Block",
-      "tagline": "Sharpen speed and break plateaus.",
-      "duration": "6 Weeks",
+      "title": "Performance Coaching",
+      "tagline": "High‑touch, adaptive coaching",
+      "duration": "Ongoing",
       "focus": [
-        "Interval + hill sessions",
-        "Strength + mobility routines",
-        "Weekly progress checkpoints",
-        "Efficiency + power development"
+        "Weekly adjustments",
+        "Data‑driven insights",
+        "Form & efficiency",
+        "Holistic performance"
       ],
-      "description": "A focused block that builds power, speed, and efficiency for your next breakthrough."
+      "description": "High‑touch coaching with detailed feedback, data review, and adaptive weekly adjustments.",
+      "gradient": "linear-gradient(135deg, rgba(255,94,58,0.12), rgba(255,195,0,0.12))"
     }
   ]
+
 
 ,
   "gallery": [
