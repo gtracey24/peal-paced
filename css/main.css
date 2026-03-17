@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------
    BACKGROUND STACK (Parallax + Frosted Glass)
 ------------------------------------------------------------ */
-.background-stack {
+/* .background-stack {
   position: fixed;
   inset: 0;
   z-index: 0;
@@ -11,34 +11,28 @@
 .parallax-texture {
   position: absolute;
   inset: 0;
-  background-image: url('/assets/images/grain.png');
+  background-image: url('/assets/images/grain.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
-  opacity: 0.35;
-}
+  opacity: 0.70;
+} */
 
-.frosted-layer {
+/* .frosted-layer {
   position: absolute;
   inset: 0;
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(6px);
-}
-
-/* Ensure all content sits above background layers */
-body > *:not(.background-stack) {
-  position: relative;
-  z-index: 1;
-}
+} */
 
 /* ------------------------------------------------------------
    BASE BACKGROUND (kept as-is)
 ------------------------------------------------------------ */
-body {
-  background: linear-gradient(to bottom right, #e0f7fa, #cfd8dc);
+/* body {
+  background: linear-gradient(to bottom right, #0c5761, #cfd8dc);
   overflow-x: hidden;
   position: relative;
-}
+} */
 
 /* ------------------------------------------------------------
    GALLERY STRIP
@@ -197,3 +191,24 @@ body.theme-friendly .testimonial-carousel-item {
   transform: translateY(0);
 }
 
+/* ------------------------------------------------------------
+  PACKAGE CARD
+------------------------------------------------------------ */ 
+.training-package {
+  background: var(--card-gradient);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+}
+
+/* ------------------------------------------------------------
+  SERVICES
+------------------------------------------------------------ */
+
+.service-block {
+  background: transparent;        /* no card background */
+  border: none;                   /* no border */
+  box-shadow: none;               /* remove Bootstrap card shadow */
+  border-radius: 0;               /* optional: remove rounding */
+  position: relative;             /* allows future sheen/gradient layers */
+}

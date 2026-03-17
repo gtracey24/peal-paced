@@ -157,7 +157,8 @@ if (!empty($config['training_packages'])) {
         '{{PACKAGE_NUMBER}}',
         '{{PACKAGE_TAGLINE}}',
         '{{PACKAGE_DURATION}}',
-        '{{PACKAGE_FOCUS}}'
+        '{{PACKAGE_FOCUS}}',
+        '{{PACKAGE_GRADIENT}}'
       ],
       [
         $step['title'],
@@ -165,7 +166,8 @@ if (!empty($config['training_packages'])) {
         $step['number'],
         $step['tagline'],
         $step['duration'],
-        $focusList
+        $focusList,
+        $step['gradient']
       ],
       $processTemplate
     );
