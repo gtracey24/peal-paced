@@ -13,13 +13,15 @@ body.theme-friendly {
   /* TEXT SIZE UPGRADE */
   font-size: 1.125rem; /* 18px base */
   line-height: 1.65;
+  
 
   /* IMPORTANT:
      Remove body background override so parallax is visible */
-  background: transparent !important;
+  /* background: transparent !important;
   color: var(--bs-body-color);
   font-family: var(--bs-body-font-family);
 }
+
 
 /* Optional: apply your gradient behind content instead of on body */
 body.theme-friendly::before {
@@ -33,7 +35,7 @@ body.theme-friendly::before {
     rgba(255, 255, 255, 1) 60%
   );
   pointer-events: none;
-}
+} */
 
 /* Headings */
 body.theme-friendly h1 {

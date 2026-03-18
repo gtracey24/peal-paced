@@ -180,6 +180,8 @@ $pageContent = str_replace(
   $pageContent
 );
 
+
+
 /* GALLERY ITEMS */
 $galleryHtml = '';
 $galleryItemTemplate = file_get_contents(
@@ -381,6 +383,8 @@ $replacements = [
   '{{CTA_HEADLINE}}'      => $config['cta']['headline'] ?? '',
   '{{CTA_BUTTON_LABEL}}'  => $config['cta']['button']['label'] ?? '',
   '{{CTA_BUTTON_URL}}'    => $config['cta']['button']['url'] ?? '',
+  '{{CTA_IMAGE}}'       => $config['cta']['image'] ?? '',
+  '{{CTA_DESCRIPTION}}' => $config['cta']['description'] ?? '',
 ];
 $html = str_replace(
   array_keys($replacements),

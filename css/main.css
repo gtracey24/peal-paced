@@ -212,3 +212,51 @@ body.theme-friendly .testimonial-carousel-item {
   border-radius: 0;               /* optional: remove rounding */
   position: relative;             /* allows future sheen/gradient layers */
 }
+
+/* ------------------------------------------------------------
+  CONTACT
+------------------------------------------------------------ */
+.section-contact-card {
+  padding: 3rem 0;
+}
+
+.contact-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  align-items: center;
+}
+
+.contact-card-image img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.contact-card-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+}
+
+.contact-card-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-button {
+  padding: 0.6rem 1.2rem;
+  background: #1f5cff;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.contact-secondary {
+  color: #1f5cff;
+  font-weight: 500;
+}
