@@ -385,6 +385,9 @@ $replacements = [
   '{{CTA_BUTTON_URL}}'    => $config['cta']['button']['url'] ?? '',
   '{{CTA_IMAGE}}'       => $config['cta']['image'] ?? '',
   '{{CTA_DESCRIPTION}}' => $config['cta']['description'] ?? '',
+  '{{CTA_PHONE}}'       => $config['cta']['phone'] ?? '',
+  '{{CTA_EMAIL}}'       => $config['cta']['email'] ?? '',
+  '{{CTA_NAME}}'        => $config['cta']['name'] ?? '',
 ];
 $html = str_replace(
   array_keys($replacements),

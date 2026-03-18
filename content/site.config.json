@@ -33,6 +33,9 @@
       "label": "Contact Me",
       "url": "mailto:jakepeal@yahoo.com"
     },
+    "name": "Jake Peal",
+    "email": "jakepeal@yahoo.com",
+    "phone": "(123) 456-7890",
     "image": "/assets/images/peal-profile.jpg",
     "description": "Whether you’re just starting out or looking to break through to the next level, I’m here to help you run smarter, stay consistent, and enjoy the process. Let’s build a plan that fits your life and gets you where you want to go."
   },
@@ -112,8 +115,6 @@
       "gradient": "linear-gradient(135deg, rgba(255,94,58,0.12), rgba(255,195,0,0.12))"
     }
   ]
-
-
 ,
   "gallery": [
     {
@@ -131,7 +132,7 @@
   ],
   "about": {
     "aboutVariant": "about-left-image",
-    "headline": "Meet Jake Peal",
+    "headline": "Meet Coach Peal",
     "image": "/assets/images/peal-running-1.jpg",
     "description": "Jake Peal has raced everything from local 5Ks to the Boston Marathon, and he brings that experience straight into his coaching. He’s spent years training high school and junior‑high runners, teaching them how to run smarter, stay consistent, and enjoy the sport. Peal Paced Track Club is his way of sharing that passion with every athlete."
   },
