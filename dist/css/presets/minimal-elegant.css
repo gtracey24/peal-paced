@@ -1,0 +1,9 @@
+[data-preset="minimal-elegant"] {
+  --color-primary: #111827;
+  --color-muted: #6b7280;
+
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body: 'Source Sans 3', sans-serif;
+
+  --btn-radius: 0.25rem;
+}

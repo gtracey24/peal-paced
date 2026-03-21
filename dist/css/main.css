@@ -1,0 +1,262 @@
+/* ------------------------------------------------------------
+   BACKGROUND STACK (Parallax + Frosted Glass)
+------------------------------------------------------------ */
+/* .background-stack {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.parallax-texture {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/grain.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.70;
+} */
+
+/* .frosted-layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
+} */
+
+/* ------------------------------------------------------------
+   BASE BACKGROUND (kept as-is)
+------------------------------------------------------------ */
+/* body {
+  background: linear-gradient(to bottom right, #0c5761, #cfd8dc);
+  overflow-x: hidden;
+  position: relative;
+} */
+
+/* ------------------------------------------------------------
+   GALLERY STRIP
+------------------------------------------------------------ */
+.gallery-strip-item {
+  width: 25%;
+  min-width: 200px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.gallery-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.gallery-tilt-in {
+  opacity: 0;
+  transform: translateY(20px) rotate(-1.5deg);
+  animation: tiltIn 0.7s ease-out forwards;
+}
+
+@keyframes tiltIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-strip-item {
+    width: 50%;
+  }
+}
+
+/* ------------------------------------------------------------
+   HERO
+------------------------------------------------------------ */
+.hero-text-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0)
+  );
+  color: white;
+  max-width: 600px;
+}
+
+/* ------------------------------------------------------------
+   SPACING
+------------------------------------------------------------ */
+.hairline {
+  border: none;
+  border-top: 0.5px solid rgba(0,0,0,0.12);
+  margin: 3rem 0;
+}
+
+.section-spacer {
+  height: 40px;
+}
+
+/* ------------------------------------------------------------
+   ABOUT
+------------------------------------------------------------ */
+.about-card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+body.theme-friendly .about-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.about-feature {
+  background: linear-gradient(
+    135deg,
+    rgba(129, 140, 248, 0.12),
+    rgba(99, 102, 241, 0.12)
+  );
+  border-radius: var(--bs-border-radius);
+}
+
+body.theme-friendly .about-feature {
+  background: linear-gradient(
+    135deg,
+    rgba(129, 140, 248, 0.18),
+    rgba(99, 102, 241, 0.18)
+  );
+}
+
+/* ------------------------------------------------------------
+   TESTIMONIALS
+------------------------------------------------------------ */
+.testimonial-card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+}
+
+body.theme-friendly .testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.testimonial-spotlight {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+}
+
+body.theme-friendly .testimonial-spotlight {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.testimonial-carousel-item {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border-radius: var(--bs-border-radius);
+}
+
+body.theme-friendly .testimonial-carousel-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ------------------------------------------------------------
+   CTA BUTTON
+------------------------------------------------------------ */
+.btn-text-us {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: transform 0.1s ease;
+}
+
+.btn-text-us:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-text-us:active {
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------
+  PACKAGE CARD
+------------------------------------------------------------ */ 
+.training-package {
+  background: var(--card-gradient);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+}
+
+/* ------------------------------------------------------------
+  SERVICES
+------------------------------------------------------------ */
+
+.service-block {
+  background: transparent;        /* no card background */
+  border: none;                   /* no border */
+  box-shadow: none;               /* remove Bootstrap card shadow */
+  border-radius: 0;               /* optional: remove rounding */
+  position: relative;             /* allows future sheen/gradient layers */
+}
+
+/* ------------------------------------------------------------
+  CONTACT
+------------------------------------------------------------ */
+.section-contact-card {
+  padding: 3rem 0;
+}
+
+.contact-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  align-items: center;
+}
+
+.contact-card-image img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.contact-card-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+}
+
+.contact-card-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-button {
+  padding: 0.6rem 1.2rem;
+  background: #1f5cff;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.contact-secondary {
+  color: #1f5cff;
+  font-weight: 500;
+}

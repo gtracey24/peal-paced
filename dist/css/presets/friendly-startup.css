@@ -1,0 +1,131 @@
+/* ------------------------------------------------------------
+   FRIENDLY STARTUP — Premium Gradient Edition (Updated Typography)
+------------------------------------------------------------ */
+
+body.theme-friendly {
+  --bs-primary: #6366f1;
+  --bs-primary-rgb: 99, 102, 241;
+
+  --bs-body-color: #1f2937;
+  --bs-border-radius: 0.75rem;
+  --bs-body-font-family: 'Lucida Bright', system-ui, sans-serif;
+
+  /* TEXT SIZE UPGRADE */
+  font-size: 1.125rem; /* 18px base */
+  line-height: 1.65;
+  
+
+  /* IMPORTANT:
+     Remove body background override so parallax is visible */
+  /* background: transparent !important;
+  color: var(--bs-body-color);
+  font-family: var(--bs-body-font-family);
+}
+
+
+/* Optional: apply your gradient behind content instead of on body */
+body.theme-friendly::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(99, 102, 241, 0.12) 0%,
+    rgba(255, 255, 255, 1) 60%
+  );
+  pointer-events: none;
+} */
+
+/* Headings */
+body.theme-friendly h1 {
+  font-size: 2.75rem;
+  line-height: 1.2;
+}
+
+body.theme-friendly h2 {
+  font-size: 2.25rem;
+  line-height: 1.25;
+}
+
+body.theme-friendly h3 {
+  font-size: 1.75rem;
+}
+
+body.theme-friendly h4 {
+  font-size: 1.35rem;
+}
+
+/* Lead text */
+body.theme-friendly .lead {
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+/* Navigation */
+body.theme-friendly .navbar {
+  background-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+body.theme-friendly .nav-link {
+  font-size: 1.15rem;
+}
+
+/* Buttons */
+body.theme-friendly .btn,
+body.theme-friendly .btn-primary {
+  font-size: 1.1rem;
+}
+
+body.theme-friendly .btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-scroll {
+  animation: fadeIn 1s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes heroFloatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-animate {
+  animation: heroFloatIn 1s ease-out forwards;
+}
+
+.service-card-gradient {
+  border: none;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  background-size: 200% 200%;
+  transition: background-position 0.6s ease;
+}
+
+.service-card-gradient:hover {
+  background-position: right center;
+}
