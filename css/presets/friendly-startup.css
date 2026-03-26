@@ -8,7 +8,8 @@ body.theme-friendly {
 
   --bs-body-color: #1f2937;
   --bs-border-radius: 0.75rem;
-  --bs-body-font-family: 'Lucida Bright', system-ui, sans-serif;
+--bs-body-font-family: 'Merriweather', serif;
+
 
   /* TEXT SIZE UPGRADE */
   font-size: 1.125rem; /* 18px base */
