@@ -168,9 +168,8 @@
     ]
   },
   "form": {
-    "variant": "form-basic",
+    "variant": "form-email",
     "headline": "Get in Touch",
-    "action": "/form-handler.php",
     "buttonLabel": "Send Message"
   }
 }
