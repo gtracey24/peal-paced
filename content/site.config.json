@@ -30,12 +30,10 @@
   "cta": {
     "headline": "Ready to run?",
     "button": {
-      "label": "Contact Me",
-      "url": "mailto:jakepeal@yahoo.com"
     },
-    "name": "Jake Peal",
-    "email": "jakepeal@yahoo.com",
-    "phone": "(123) 456-7890",
+    "name": "",
+    "email": "",
+    "phone": "",
     "image": "/assets/images/peal-profile.jpg",
     "description": "Whether you’re just starting out or looking to break through to the next level, I’m here to help you run smarter, stay consistent, and enjoy the process. Let’s build a plan that fits your life and gets you where you want to go."
   },
@@ -74,44 +72,35 @@
   "training_packages": [
     {
       "number": "01",
-      "title": "Base Training",
-      "tagline": "Build your aerobic engine",
-      "duration": "8–12 weeks",
+      "title": "Base Training-$35",
+      "tagline": "For the athlete looking to get started or wanting more structure and guidance in their training. ",
+      "duration": "",
       "focus": [
-        "Easy‑run consistency",
-        "Aerobic development",
-        "Light workouts",
-        "Foundational mileage"
+
       ],
-      "description": "Build aerobic strength, consistency, and foundational mileage with structured easy runs and light workouts.",
+      "description": "Build aerobic strength, consistency, and foundational fitness with structured easy runs and basic foundational workouts. Featuring Easy run consistency, aerobic development, aerobic strength workouts and long runs.  ",
       "gradient": "linear-gradient(135deg, #0a84ff15, #ffd60a15)"
     },
     {
       "number": "02",
-      "title": "Race Prep",
-      "tagline": "Sharpen for your target race",
-      "duration": "6–10 weeks",
+      "title": "Race Prep-$50/month",
+      "tagline": "Dial in pacing, workouts, and long-run structure specific for your goal race pace.",
+      "duration": "",
       "focus": [
-        "Race‑pace workouts",
-        "Long‑run structure",
-        "Pacing strategy",
-        "Fueling practice"
+     
       ],
-      "description": "Dial in pacing, workouts, and long‑run structure to peak for your target race with confidence.",
+      "description": "This package includes weekly feedback, zoom meetings, or phone calls with Coach Peal to create goals and specific race plans for your target race. ",
       "gradient": "linear-gradient(135deg, rgba(0,122,255,0.12), rgba(135,206,250,0.12))"
     },
     {
       "number": "03",
-      "title": "Performance Coaching",
-      "tagline": "High‑touch, adaptive coaching",
-      "duration": "Ongoing",
+      "title": "Premier Training Program-$75/month",
+      "tagline": "For the athlete looking for more; whether you are looking to qualify for the Boston Marathon, run Boston or qualify for State in Tack or XC.",
+      "duration": "",
       "focus": [
-        "Weekly adjustments",
-        "Data‑driven insights",
-        "Form & efficiency",
-        "Holistic performance"
+ 
       ],
-      "description": "High‑touch coaching with detailed feedback, data review, and adaptive weekly adjustments.",
+      "description": "This plan features high touch coaching with detailed feedback, data review, and adaptive weekly adjustments to prep you for your goal races that matter.",
       "gradient": "linear-gradient(135deg, rgba(255,94,58,0.12), rgba(255,195,0,0.12))"
     }
   ],
@@ -133,7 +122,8 @@
     "aboutVariant": "about-left-image",
     "headline": "Meet Coach Peal",
     "image": "/assets/images/peal-running-1.jpg",
-    "description": "Jake Peal has raced everything from local 5Ks to the Boston Marathon, and he brings that experience straight into his coaching. He’s spent years training high school and junior‑high runners, teaching them how to run smarter, stay consistent, and enjoy the sport. Peal Paced Track Club is his way of sharing that passion with every athlete."
+    "description": "Coach Peal brings 15 years of personal running experience at the high school, college, and sub-elite levels. In his own running career, Coach Peal has run every distance from the 5K to the marathon, finishing seven marathons — including Boston twice. In his coaching career, Coach Peal has guided athletes to all-conference, all-regional, and all-state accolades, including a state championship. He is even more proud of helping athletes go on to compete collegiately at every level. Peal Paced Track Club is his way of sharing that passion with every athlete, no matter where they are on their running journey."
+
   },
   "footer": {
     "text": "© 2026 Your Business. All rights reserved.",
@@ -170,6 +160,7 @@
   "form": {
     "variant": "form-email",
     "headline": "Get in Touch",
+    "description": "Have questions or ready to start your training journey? Send me a message and I’ll get back to you as soon as possible.",
     "buttonLabel": "Send Message"
   }
 }

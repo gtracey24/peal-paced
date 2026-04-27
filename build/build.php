@@ -376,6 +376,7 @@ $replacements = [
 
 // FORM
 '{{FORM_HEADLINE}}' => $config['form']['headline'] ?? '',
+'{{FORM_DESCRIPTION}}' => $config['form']['description'] ?? '',
 '{{FORM_ACTION}}' => $config['form']['action'] ?? '',
 '{{FORM_BUTTON_LABEL}}' => $config['form']['buttonLabel'] ?? 'Submit',
 
