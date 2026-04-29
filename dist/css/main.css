@@ -42,13 +42,32 @@
   min-width: 200px;
   height: 600px;
   overflow: hidden;
+  
 }
 
-@media (max-width: 768px) {
+.gallery-strip-item img {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+
+/* Tablet */
+@media (max-width: 992px) {
   .gallery-strip-item {
-    width: 50%;
+    width: 33.33%;
+    height: 400px;
   }
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .gallery-strip-item {
+    width: 100%;
+    height: 300px;
+    min-width: 0;
+  }
+}
+
 
 /* ------------------------------------------------------------
    HERO
