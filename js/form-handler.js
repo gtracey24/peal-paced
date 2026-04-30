@@ -11,8 +11,9 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   };
 
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbw_6cfV7gCBKj3LmltodYt-T71xaBR9871dioP4Kl9jn1XNlyHaxmETQjV56cItb18oJQ/exec", {
+    const response = await fetch("/php/form-handler.php", {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
 
@@ -22,7 +23,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
       status.innerHTML = `<div class="alert alert-success">Message sent successfully!</div>`;
       form.reset();
     } else {
-      status.innerHTML = `<div class="alert alert-danger">Something went wrong. Try again.</div>`;
+      status.innerHTML = `<div class="alert alert-danger">${result.message || "Something went wrong."}</div>`;
     }
   } catch (error) {
     status.innerHTML = `<div class="alert alert-danger">Network error. Try again.</div>`;
