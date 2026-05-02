@@ -21,7 +21,7 @@ if ($name === "" || $email === "" || $message === "") {
 }
 
 // Where the email goes (THIS is the only line you change)
-$recipient = "jpeal@bethalto.org"; // change to your desired receiving email
+$recipient = "gtracey24@gmail.com"; // change to your desired receiving email
 
 $subject = "New Contact Form Submission";
 $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
