@@ -51,7 +51,7 @@ file_put_contents(__DIR__ . "/form-log.txt", $log, FILE_APPEND);
 
 
 // Where the email goes
-$recipient = "gtracey24@gmail.com";
+$recipient = "jpeal@bethalto.org";
 
 $subject = "New Contact Form Submission";
 $body = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message\n";
@@ -70,7 +70,7 @@ $sent = mail($recipient, $subject, $body, $headers);
 /* ---------------------------------------------------------
    2) BACKUP EMAIL
 --------------------------------------------------------- */
-mail("gtracey@fccwr.com", "[Backup] New Form Submission", $body, $headers);
+mail("gtracey24@gmail.com", "[Backup] New Form Submission", $body, $headers);
 
 /* ---------------------------------------------------------
    JSON RESPONSE
