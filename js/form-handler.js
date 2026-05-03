@@ -3,13 +3,29 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
   const form = e.target;
   const status = document.getElementById("form-status");
+  const button = document.getElementById("submit-btn");
+
+  // Honeypot check
+  if (form.website.value !== "") {
+    return; // bot detected
+  }
+
+  // Timestamp check (must be > 2 seconds)
+  const ts = parseInt(form.ts.value, 10);
+  if (Date.now() / 1000 - ts < 2) {
+    return; // bot detected
+  }
 
   const data = {
-    name: form.name.value,
-    email: form.email.value,
-    phone: form.phone.value,
-    message: form.message.value
+    name: form.name.value.trim(),
+    email: form.email.value.trim(),
+    phone: form.phone.value.trim(),
+    message: form.message.value.trim()
   };
+
+  // Disable button + show sending state
+  button.disabled = true;
+  status.innerHTML = `<div class="text-muted">Sending...</div>`;
 
   try {
     const response = await fetch("/php/form-handler.php", {
@@ -29,4 +45,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   } catch (error) {
     status.innerHTML = `<div class="alert alert-danger">Network error. Try again.</div>`;
   }
+
+  // Re-enable button
+  button.disabled = false;
 });
