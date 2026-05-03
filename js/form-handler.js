@@ -10,9 +10,9 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     return; // bot detected
   }
 
-  // Timestamp check (must be > 2 seconds)
+  // Timestamp check (must be > 1 second)
   const ts = parseInt(form.ts.value, 10);
-  if (Date.now() / 1000 - ts < 2) {
+  if (Date.now() / 1000 - ts < 1) {
     return; // bot detected
   }
 
@@ -20,7 +20,9 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     name: form.name.value.trim(),
     email: form.email.value.trim(),
     phone: form.phone.value.trim(),
-    message: form.message.value.trim()
+    message: form.message.value.trim(),
+    website: form.website.value,
+    ts: form.ts.value
   };
 
   // Disable button + show sending state

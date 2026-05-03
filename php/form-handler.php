@@ -1,6 +1,4 @@
 <?php
-
-
 header("Content-Type: application/json");
 
 // Allow only POST
@@ -12,11 +10,24 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 // Read JSON body
 $data = json_decode(file_get_contents("php://input"), true);
 
+// DEBUG (optional): write raw data
+// file_put_contents(__DIR__ . "/debug.txt", print_r($data, true));
+
 // Basic validation
 $name = trim($data["name"] ?? "");
 $email = trim($data["email"] ?? "");
-$message = trim($data["message"] ?? "");
 $phone = trim($data["phone"] ?? "");
+$message = trim($data["message"] ?? "");
+
+// Honeypot check
+if (!empty($data["website"])) {
+    exit; // bot detected
+}
+
+// Timestamp check (must be > 1 second)
+if (isset($data["ts"]) && time() - intval($data["ts"]) < 1) {
+    exit; // bot detected
+}
 
 if ($name === "" || $email === "" || $message === "" || $phone === "") {
     echo json_encode(["status" => "error", "message" => "Missing fields"]);
@@ -25,7 +36,6 @@ if ($name === "" || $email === "" || $message === "" || $phone === "") {
 
 /* ---------------------------------------------------------
    1) SUBMISSION LOG
-   Logs every submission with timestamp, IP, device, and data.
 --------------------------------------------------------- */
 $log = date("Y-m-d H:i:s") . " | "
      . "Name: $name | "
@@ -38,7 +48,7 @@ $log = date("Y-m-d H:i:s") . " | "
 file_put_contents(__DIR__ . "/form-log.txt", $log, FILE_APPEND);
 
 
-// Where the email goes (THIS is the only line you change)
+// Where the email goes
 $recipient = "gtracey24@gmail.com";
 
 $subject = "New Contact Form Submission";
@@ -46,28 +56,22 @@ $body = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message\n";
 
 /* ---------------------------------------------------------
    HEADERS
-   Neutral "From" header prevents Gmail/Yahoo/Outlook blocking.
-   Reply-To lets the client reply directly to the sender.
 --------------------------------------------------------- */
 $headers = "From: form@" . $_SERVER['SERVER_NAME'] . "\r\n";
 $headers .= "Reply-To: $email\r\n";
-
 
 /* ---------------------------------------------------------
    MAIN EMAIL SEND
 --------------------------------------------------------- */
 $sent = mail($recipient, $subject, $body, $headers);
 
-
 /* ---------------------------------------------------------
    2) BACKUP EMAIL
-   Sends a silent copy to you so you always know the form works.
 --------------------------------------------------------- */
 mail("gtracey@fccwr.com", "[Backup] New Form Submission", $body, $headers);
 
-
 /* ---------------------------------------------------------
-   JSON RESPONSE FOR FRONTEND
+   JSON RESPONSE
 --------------------------------------------------------- */
 if ($sent) {
     echo json_encode(["status" => "success"]);
@@ -75,10 +79,8 @@ if ($sent) {
     echo json_encode(["status" => "error", "message" => "Email failed"]);
 }
 
-
 /* ---------------------------------------------------------
    3) ERROR LOG
-   Logs failed mail() attempts for debugging.
 --------------------------------------------------------- */
 if (!$sent) {
     file_put_contents(__DIR__ . "/form-errors.txt",
