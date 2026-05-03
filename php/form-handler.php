@@ -29,7 +29,7 @@ if (isset($data["ts"]) && time() - intval($data["ts"]) < 1) {
     exit; // bot detected
 }
 
-if ($name === "" || $email === "" || $message === "" || $phone === "") {
+if ($name === "" || $email === "" || $phone === "" || $message === "") {
     echo json_encode(["status" => "error", "message" => "Missing fields"]);
     exit;
 }
