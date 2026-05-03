@@ -27,7 +27,8 @@ $subject = "New Contact Form Submission";
 $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
 
 // Additional headers
-$headers = "From: no-reply@" . $_SERVER['SERVER_NAME'] . "\r\n";
+$headers = "From: form@".$_SERVER['SERVER_NAME']."\r\n";
+
 $headers .= "Reply-To: $email\r\n";
 
 // Send the email
