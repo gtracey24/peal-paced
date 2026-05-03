@@ -48,10 +48,6 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     status.innerHTML = `<div class="alert alert-danger">Network error. Try again.</div>`;
   }
 
-  console.log("FORM ELEMENTS:", form.elements);
-console.log("Phone element:", form.phone);
-console.log("Phone value:", form.phone?.value);
-
   // Re-enable button
   button.disabled = false;
 });
