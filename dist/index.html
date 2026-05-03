@@ -372,6 +372,13 @@
       </p>
 
       <form id="contact-form">
+
+        <!-- Honeypot (bots fill this, humans don't) -->
+        <input type="text" name="website" style="display:none">
+
+        <!-- Timestamp (anti-bot speed check) -->
+        <input type="hidden" name="ts" value="<?= time() ?>">
+
         <div class="mb-3">
           <label class="form-label">Your Name</label>
           <input type="text" name="name" class="form-control" required />
@@ -382,9 +389,9 @@
           <input type="email" name="email" class="form-control" required />
         </div>
 
-         <div class="mb-3">
+        <div class="mb-3">
           <label class="form-label">Your Phone Number</label>
-          <input name="number" class="form-control" required />
+          <input type="tel" name="phone" class="form-control" required />
         </div>
 
         <div class="mb-3">
@@ -392,7 +399,7 @@
           <textarea name="message" class="form-control" rows="4" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100">
+        <button type="submit" class="btn btn-primary w-100" id="submit-btn">
           Send Message
         </button>
       </form>
