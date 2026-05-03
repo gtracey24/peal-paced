@@ -9,6 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 // Read JSON body
 $data = json_decode(file_get_contents("php://input"), true);
+file_put_contents(__DIR__ . "/debug.txt", print_r($data, true));
+
 
 // DEBUG (optional): write raw data
 // file_put_contents(__DIR__ . "/debug.txt", print_r($data, true));
