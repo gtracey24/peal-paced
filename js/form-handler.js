@@ -7,6 +7,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   const data = {
     name: form.name.value,
     email: form.email.value,
+    phone: form.phone.value,
     message: form.message.value
   };
 
