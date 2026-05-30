@@ -432,9 +432,27 @@ function copyDir(string $src, string $dst): void
 }
 
 /* ------------------------------------------------------------
- * Copy ALL CSS (bootstrap, main, components, presets)
+ * Copy Files (bootstrap, main, components, presets, assets, etc.)
  * ------------------------------------------------------------ */
 copyDir($root . '/css', $distPath . '/css');
+
+/* Copy assets */
+copyDir($root . '/assets', $distPath . '/assets');
+
+/* Copy JS */
+copyDir($root . '/js', $distPath . '/js');
+
+/* Copy images (if separate) */
+copyDir($root . '/images', $distPath . '/images');
+
+/* Copy content */
+copyDir($root . '/content', $distPath . '/content');
+
+/* Copy templates (if needed by JS) */
+copyDir($root . '/templates', $distPath . '/templates');
+
+/* Copy PHP (if needed — usually not for static) */
+copyDir($root . '/php', $distPath . '/php');
 
 /* ------------------------------------------------------------
  * Ensure selected preset exists

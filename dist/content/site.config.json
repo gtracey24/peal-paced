@@ -1,0 +1,166 @@
+{
+  "site": {
+    "name": "Peal Paced Track Club",
+    "language": "en"
+  },
+  "seo": {
+    "title": "Peal Paced Track Club — Premium Coaching for Driven Runners",
+    "description": "PPTC helps runners train with purpose through personalized coaching, structured plans, and a supportive, high‑performance community.",
+    "canonical": "https://pealpaced.com/",
+    "ogImage": "/assets/images/pptc-og-image.png"
+  },
+  "design": {
+    "theme": "friendly",
+    "stylesheet": "friendly-startup.css",
+    "heroVariant": "split-reverse",
+    "serviceStyle": "service-card-icon",
+    "processStyle": "default",
+    "galleryStyle": "gallery-hero-full",
+    "testimonialStyle": "testimonial-quote"
+  },
+  "hero": {
+    "headline": "Run with purpose.</br>Train with clarity.",
+    "subheadline": "Guidance that simplifies the process and strengthens your stride",
+    "image": "/assets/images/logo_no_background.png",
+    "cta": {
+      "label": "Get Started",
+      "url": "#contact"
+    }
+  },
+  "cta": {
+    "headline": "I'll guide you from start to finish, every step of the way.",
+    "button": {
+    },
+    "name": "",
+    "email": "",
+    "phone": "",
+    "image": "/assets/images/peal-profile.jpg",
+    "description": "I’m here to help you run smarter, stay consistent, and enjoy the process. Let’s build a plan that fits your life and gets you where you want to go."
+  },
+  "navigation": [
+    {
+      "label": "Services",
+      "url": "#services"
+    },
+    {
+      "label": "Process",
+      "url": "#process"
+    },
+    {
+      "label": "Contact",
+      "url": "#contact"
+    }
+  ],
+  "services": [
+    {
+      "title": "Personalized Training Path",
+      "gradient":"linear-gradient(135deg, #00c6ff, #0072ff)",
+      "icon": "bi-clipboard-check",
+      "description": "A plan built around your life, not someone else’s pace. We map out clear weekly steps, adjust for real-world demands, and build a rhythm you can actually sustain. Consistency becomes automatic when the plan fits who you are."
+    },
+    {
+      "title": "Purposeful Workouts",
+      "icon": "bi-stopwatch",
+      "description": "Every run has a job. Easy days build your engine, workouts sharpen your speed, and recovery keeps you progressing. You will always know why you are doing something and how it moves you forward."
+    },
+    {
+      "title": "Measurable, Momentum-Building Progress",
+      "icon": "bi-bar-chart",
+      "description": "We track the right metrics, celebrate the right wins, and refine the plan as you grow. Small improvements stack into breakthroughs when you follow a system designed for long-term success."
+    }
+  ],
+  "training_packages": [
+    {
+      "number": "01",
+      "title": "Base Training-$35/month",
+      "tagline": "For the athlete looking to get started or wanting more structure and guidance in their training. ",
+      "duration": "",
+      "focus": [
+
+      ],
+      "description": "Build aerobic strength, consistency, and foundational fitness with structured easy runs and basic foundational workouts. Featuring Easy run consistency, aerobic development, aerobic strength workouts and long runs.  ",
+      "gradient": "linear-gradient(135deg, #0a84ff15, #ffd60a15)"
+    },
+    {
+      "number": "02",
+      "title": "Race Prep-$50/month",
+      "tagline": "Dial in pacing, workouts, and long-run structure specific for your goal race pace.",
+      "duration": "",
+      "focus": [
+     
+      ],
+      "description": "This package includes weekly feedback, zoom meetings, or phone calls with Coach Peal to create goals and specific race plans for your target race. ",
+      "gradient": "linear-gradient(135deg, rgba(0,122,255,0.12), rgba(135,206,250,0.12))"
+    },
+    {
+      "number": "03",
+      "title": "Premier Training Program-$75/month",
+      "tagline": "For the athlete looking for more; whether you are looking to qualify for the Boston Marathon, run Boston or qualify for State in Tack or XC.",
+      "duration": "",
+      "focus": [
+ 
+      ],
+      "description": "This plan features high touch coaching with detailed feedback, data review, and adaptive weekly adjustments to prep you for your goal races that matter.",
+      "gradient": "linear-gradient(135deg, rgba(255,94,58,0.12), rgba(255,195,0,0.12))"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "/assets/images/peal-running-2.jpg",
+      "caption": "Peal leading a group run in the park."
+    },
+    {
+      "image": "/assets/images/peal-running-3.jpg",
+      "caption": "A training session focused on speed work."
+    },
+    {
+      "image": "/assets/images/peal-running-4.jpg",
+      "caption": "Celebrating a successful race finish with the team."
+    }
+  ],
+  "about": {
+    "aboutVariant": "about-left-image",
+    "headline": "Meet Coach Peal",
+    "image": "/assets/images/peal-running-1.jpg",
+    "description": "Coach Peal brings 15 years of personal running experience at the high school, college, and sub-elite levels. In his own running career, Coach Peal has run every distance from the 5K to the marathon, finishing seven marathons — including Boston twice. In his coaching career, Coach Peal has guided athletes to all-conference, all-regional, and all-state accolades, including a state championship. He is even more proud of helping athletes go on to compete collegiately at every level. Peal Paced Track Club is his way of sharing that passion with every athlete, no matter where they are on their running journey."
+
+  },
+  "footer": {
+    "text": "© 2026 Your Business. All rights reserved.",
+    "links": [
+      {
+        "label": "Privacy",
+        "url": "/privacy.html"
+      },
+      {
+        "label": "Terms",
+        "url": "/terms.html"
+      }
+    ]
+  },
+  "testimonials": {
+    "headline": "What People Say",
+    "variant": "testimonials-spotlight",
+    "itemStyle": "spotlight",
+    "items": [
+      {
+        "text": "Grant transformed our entire workflow.",
+        "author": "Sarah M.",
+        "role": "Founder, BrightPath",
+        "avatar": "/peal-paced/assets/images/sarah.jpg"
+      },
+      {
+        "text": "Clean, modern, and fast. Exactly what we needed.",
+        "author": "James R.",
+        "role": "Creative Director",
+        "avatar": "/assets/images/james.jpg"
+      }
+    ]
+  },
+  "form": {
+    "variant": "form-email",
+    "headline": "Get in Touch",
+    "description": "Have questions or ready to start your training journey? Send me a message and I’ll get back to you as soon as possible.",
+    "buttonLabel": "Send Message"
+  }
+}

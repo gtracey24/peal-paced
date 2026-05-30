@@ -1,0 +1,50 @@
+<section id="contact" class="sf-card-wrapper my-6 p-5" style="background-color: blue;">
+  <div class="container">
+    <div class="sf-card mx-auto p-4 shadow-sm border rounded bg-white" style="max-width: 520px;">
+
+      <h2 class="sf-card-title text-center mb-3">{{FORM_HEADLINE}}</h2>
+
+      <p class="sf-card-text text-center text-muted mb-4">
+        {{FORM_DESCRIPTION}}
+      </p>
+
+      <form id="contact-form">
+
+        <!-- Honeypot (bots fill this, humans don't) -->
+        <input type="text" name="website" style="display:none">
+
+        <!-- Timestamp (anti-bot speed check) -->
+        <input type="hidden" name="ts" value="<?= time() ?>">
+
+        <div class="mb-3">
+          <label class="form-label">Your Name</label>
+          <input type="text" name="name" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Your Email</label>
+          <input type="email" name="email" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Your Phone Number</label>
+          <input type="tel" name="phone" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Message</label>
+          <textarea name="message" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100" id="submit-btn">
+          {{FORM_BUTTON_LABEL}}
+        </button>
+      </form>
+
+      <div id="form-status" class="mt-3"></div>
+
+    </div>
+  </div>
+</section>
+
+<script src="/js/form-handler.js"></script>
