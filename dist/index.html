@@ -376,8 +376,8 @@
         <!-- Honeypot (bots fill this, humans don't) -->
         <input type="text" name="website" style="display:none">
 
-        <!-- Timestamp (anti-bot speed check) -->
-        <input type="hidden" name="ts" value="<?= time() ?>">
+        <!-- Timestamp (set by JS because PHP won't run in static build) -->
+        <input type="hidden" name="ts" id="ts-field" value="">
 
         <div class="mb-3">
           <label class="form-label">Your Name</label>
@@ -409,6 +409,16 @@
     </div>
   </div>
 </section>
+
+<!-- Timestamp initializer -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tsField = document.getElementById("ts-field");
+    if (tsField) {
+      tsField.value = Math.floor(Date.now() / 1000);
+    }
+  });
+</script>
 
 <script src="/js/form-handler.js"></script>
 
