@@ -30,7 +30,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   status.innerHTML = `<div class="text-muted">Sending...</div>`;
 
   try {
-    const response = await fetch("/php/form-handler.php", {
+    const response = await fetch("dist/php/form-handler.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
