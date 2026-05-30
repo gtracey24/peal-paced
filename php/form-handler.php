@@ -7,6 +7,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // ------------------------------------------------------------
+// LOAD SECRET CONFIG HERE
+// ------------------------------------------------------------
+$config = require __DIR__ . '/secret-config.php';
+$smtpUser = $config['smtp_user'];
+$smtpPass = $config['smtp_pass'];
+
+// ------------------------------------------------------------
 // 1. Read JSON input
 // ------------------------------------------------------------
 $input = json_decode(file_get_contents('php://input'), true);
