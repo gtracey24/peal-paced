@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require __DIR__ . '/PHPMailer/src/PHPMailer.php';
 require __DIR__ . '/PHPMailer/src/SMTP.php';
 require __DIR__ . '/PHPMailer/src/Exception.php';
@@ -7,97 +10,115 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // ------------------------------------------------------------
-// LOAD SECRET CONFIG HERE
+// Load secret config
 // ------------------------------------------------------------
 $config = require __DIR__ . '/secret-config.php';
 $smtpUser = $config['smtp_user'];
 $smtpPass = $config['smtp_pass'];
 
 // ------------------------------------------------------------
-// 1. Read JSON input
+// Read JSON input
 // ------------------------------------------------------------
 $input = json_decode(file_get_contents('php://input'), true);
 
-$name    = trim($input['name'] ?? '');
-$email   = trim($input['email'] ?? '');
-$phone   = trim($input['phone'] ?? '');
-$message = trim($input['message'] ?? '');
-$website = trim($input['website'] ?? '');
-$ts      = intval($input['ts'] ?? 0);
-
-// ------------------------------------------------------------
-// 2. Basic validation
-// ------------------------------------------------------------
-if ($website !== '') {
-    echo json_encode(['success' => false, 'error' => 'Bot detected']);
-    exit;
-}
-
-if (!$name || !$email || !$message) {
-    echo json_encode(['success' => false, 'error' => 'Missing fields']);
-    exit;
-}
-
-if (time() - $ts < 3) {
-    echo json_encode(['success' => false, 'error' => 'Too fast']);
+if (!$input) {
+    echo json_encode(["success" => false, "error" => "Invalid JSON"]);
     exit;
 }
 
 // ------------------------------------------------------------
-// 3. Prepare PHPMailer
+// Honeypot check
+// ------------------------------------------------------------
+if (!empty($input['website'])) {
+    echo json_encode(["success" => false, "error" => "Bot detected"]);
+    exit;
+}
+
+// ------------------------------------------------------------
+// Required fields
+// ------------------------------------------------------------
+$required = ['name', 'email', 'phone', 'message', 'ts'];
+foreach ($required as $field) {
+    if (empty($input[$field])) {
+        echo json_encode(["success" => false, "error" => "Missing fields"]);
+        exit;
+    }
+}
+
+// ------------------------------------------------------------
+// Timestamp anti‑bot check
+// ------------------------------------------------------------
+if (time() - intval($input['ts']) < 2) {
+    echo json_encode(["success" => false, "error" => "Too fast"]);
+    exit;
+}
+
+// ------------------------------------------------------------
+// Prepare email content
+// ------------------------------------------------------------
+$name = htmlspecialchars($input['name']);
+$email = htmlspecialchars($input['email']);
+$phone = htmlspecialchars($input['phone']);
+$message = nl2br(htmlspecialchars($input['message']));
+
+$body = "
+<strong>Name:</strong> $name<br>
+<strong>Email:</strong> $email<br>
+<strong>Phone:</strong> $phone<br><br>
+<strong>Message:</strong><br>$message
+";
+
+// ------------------------------------------------------------
+// Send email to JPeal
 // ------------------------------------------------------------
 $mail = new PHPMailer(true);
 
 try {
-    // SMTP settings
     $mail->isSMTP();
-    $mail->Host       = 'smtp-relay.brevo.com';
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'a9bac6001@smtp-brevo.com'; // Your Brevo SMTP login
-    $mail->Password   = '2R4MKd0GfD09WICj';         // Your Brevo SMTP key
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = 587;
+    $mail->Host = 'smtp-relay.brevo.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = $smtpUser;
+    $mail->Password = $smtpPass;
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
-    // Sender
-    $mail->setFrom('gtracey@thirtyfold.dev', 'Website Contact Form');
+    $mail->setFrom($smtpUser, 'Website Contact Form');
+    $mail->addAddress('jpeal@jpeal.com');
 
-    // ------------------------------------------------------------
-    // 4. Primary email to JPeal
-    // ------------------------------------------------------------
-    $mail->addAddress('jpeal@bethalto.org');
-
-    $mail->Subject = "New Contact Form Submission from $name";
-    $mail->Body    =
-        "Name: $name\n" .
-        "Email: $email\n" .
-        "Phone: $phone\n\n" .
-        "Message:\n$message\n\n" .
-        "Timestamp: " . date('Y-m-d H:i:s');
+    $mail->isHTML(true);
+    $mail->Subject = 'New Contact Form Submission';
+    $mail->Body = $body;
 
     $mail->send();
+} catch (Exception $e) {
+    echo json_encode(["success" => false, "error" => "Mailer error"]);
+    exit;
+}
 
-    // ------------------------------------------------------------
-    // 5. Send receipt to Grant (no message body)
-    // ------------------------------------------------------------
-    $receipt = new PHPMailer(true);
+// ------------------------------------------------------------
+// Send receipt to user
+// ------------------------------------------------------------
+$receipt = new PHPMailer(true);
+
+try {
     $receipt->isSMTP();
-    $receipt->Host       = 'smtp-relay.brevo.com';
-    $receipt->SMTPAuth   = true;
+    $receipt->Host = 'smtp-relay.brevo.com';
+    $receipt->SMTPAuth = true;
+    $receipt->Username = $smtpUser;
+    $receipt->Password = $smtpPass;
+    $receipt->SMTPSecure = 'tls';
+    $receipt->Port = 587;
 
-    $receipt->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $receipt->Port       = 587;
+    $receipt->setFrom($smtpUser, 'JPeal');
+    $receipt->addAddress($email);
 
-    $receipt->setFrom('gtracey@thirtyfold.dev', 'Website Contact Form');
-    $receipt->addAddress('gtracey@thirtyfold.dev');
-
-    $receipt->Subject = "New Submission Received";
-    $receipt->Body    = "A new form submission was received from $name ($email).";
+    $receipt->isHTML(true);
+    $receipt->Subject = 'We received your message';
+    $receipt->Body = "Thanks $name, we received your message and will get back to you soon.";
 
     $receipt->send();
-
-    echo json_encode(['success' => true]);
-
 } catch (Exception $e) {
-    file_put_contents(__DIR__ . '/form-errors.txt', $e->getMessage() . "\n", FILE_APPEND);
-    echo json_encode(['success' => false, 'error' => 'Email failed']);
+    // Receipt failing should NOT block the main success
 }
+
+echo json_encode(["success" => true]);
