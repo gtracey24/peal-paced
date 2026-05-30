@@ -1,6 +1,13 @@
 RewriteEngine On
 RewriteBase /
 
+# 1. Do NOT rewrite PHP requests
+RewriteCond %{REQUEST_URI} ^/php/
+RewriteRule ^ - [L]
+
+# 2. Redirect root to /dist
 RewriteRule ^$ dist/ [L]
+
+# 3. Rewrite everything else into /dist
 RewriteCond %{REQUEST_URI} !^/dist/
 RewriteRule ^(.*)$ dist/$1 [L]
