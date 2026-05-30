@@ -76,8 +76,7 @@ try {
     $receipt->isSMTP();
     $receipt->Host       = 'smtp-relay.brevo.com';
     $receipt->SMTPAuth   = true;
-    $receipt->Username   = 'a9bac6001@smtp-brevo.com';
-    $receipt->Password   = '2R4MKd0GfD09WICj';
+
     $receipt->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $receipt->Port       = 587;
 
