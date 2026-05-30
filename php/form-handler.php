@@ -1,94 +1,97 @@
 <?php
-header("Content-Type: application/json");
+require __DIR__ . '/PHPMailer/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer/src/SMTP.php';
+require __DIR__ . '/PHPMailer/src/Exception.php';
 
-// Allow only POST
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    echo json_encode(["status" => "error", "message" => "Invalid request"]);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// ------------------------------------------------------------
+// 1. Read JSON input
+// ------------------------------------------------------------
+$input = json_decode(file_get_contents('php://input'), true);
+
+$name    = trim($input['name'] ?? '');
+$email   = trim($input['email'] ?? '');
+$phone   = trim($input['phone'] ?? '');
+$message = trim($input['message'] ?? '');
+$website = trim($input['website'] ?? '');
+$ts      = intval($input['ts'] ?? 0);
+
+// ------------------------------------------------------------
+// 2. Basic validation
+// ------------------------------------------------------------
+if ($website !== '') {
+    echo json_encode(['success' => false, 'error' => 'Bot detected']);
     exit;
 }
 
-// Read JSON body
-$data = json_decode(file_get_contents("php://input"), true);
-file_put_contents(__DIR__ . "/debug.txt", print_r($data, true));
-
-
-// DEBUG (optional): write raw data
-// file_put_contents(__DIR__ . "/debug.txt", print_r($data, true));
-
-// Basic validation
-$name = trim($data["name"] ?? "");
-$email = trim($data["email"] ?? "");
-$phone = trim($data["phone"] ?? "");
-$message = trim($data["message"] ?? "");
-
-// Honeypot check
-if (!empty($data["website"])) {
-    exit; // bot detected
-}
-
-// Timestamp check (must be > 1 second)
-if (isset($data["ts"]) && time() - intval($data["ts"]) < 1) {
-    exit; // bot detected
-}
-
-if ($name === "" || $email === "" || $phone === "" || $message === "") {
-    echo json_encode(["status" => "error", "message" => "Missing fields"]);
+if (!$name || !$email || !$message) {
+    echo json_encode(['success' => false, 'error' => 'Missing fields']);
     exit;
 }
 
-/* ---------------------------------------------------------
-   1) SUBMISSION LOG
---------------------------------------------------------- */
-$log = date("Y-m-d H:i:s") . " | "
-     . "Name: $name | "
-     . "Email: $email | "
-     . "Phone: $phone | "
-     . "Message: " . str_replace("\n", " ", $message) . " | "
-     . "IP: " . $_SERVER['REMOTE_ADDR'] . " | "
-     . "User Agent: " . $_SERVER['HTTP_USER_AGENT'] . "\n";
-
-file_put_contents(__DIR__ . "/form-log.txt", $log, FILE_APPEND);
-
-
-// Where the email goes
-$recipient = "jpeal@bethalto.org";
-
-$subject = "New Contact Form Submission";
-$body = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message\n";
-
-/* ---------------------------------------------------------
-   HEADERS
---------------------------------------------------------- */
-$headers = "From: form@" . $_SERVER['SERVER_NAME'] . "\r\n";
-$headers .= "Reply-To: $email\r\n";
-
-/* ---------------------------------------------------------
-   MAIN EMAIL SEND
---------------------------------------------------------- */
-$sent = mail($recipient, $subject, $body, $headers);
-
-/* ---------------------------------------------------------
-   2) BACKUP EMAIL
---------------------------------------------------------- */
-mail("gtracey24@gmail.com", "[Backup] New Form Submission", $body, $headers);
-
-/* ---------------------------------------------------------
-   JSON RESPONSE
---------------------------------------------------------- */
-if ($sent) {
-    echo json_encode(["status" => "success"]);
-} else {
-    echo json_encode(["status" => "error", "message" => "Email failed"]);
+if (time() - $ts < 3) {
+    echo json_encode(['success' => false, 'error' => 'Too fast']);
+    exit;
 }
 
-/* ---------------------------------------------------------
-   3) ERROR LOG
---------------------------------------------------------- */
-if (!$sent) {
-    file_put_contents(__DIR__ . "/form-errors.txt",
-        date("Y-m-d H:i:s") . " | Failed to send from $email\n",
-        FILE_APPEND
-    );
-}
+// ------------------------------------------------------------
+// 3. Prepare PHPMailer
+// ------------------------------------------------------------
+$mail = new PHPMailer(true);
 
-?>
+try {
+    // SMTP settings
+    $mail->isSMTP();
+    $mail->Host       = 'smtp-relay.brevo.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'a9bac6001@smtp-brevo.com'; // Your Brevo SMTP login
+    $mail->Password   = '2R4MKd0GfD09WICj';         // Your Brevo SMTP key
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
+
+    // Sender
+    $mail->setFrom('gtracey@thirtyfold.dev', 'Website Contact Form');
+
+    // ------------------------------------------------------------
+    // 4. Primary email to JPeal
+    // ------------------------------------------------------------
+    $mail->addAddress('jpeal@bethalto.org');
+
+    $mail->Subject = "New Contact Form Submission from $name";
+    $mail->Body    =
+        "Name: $name\n" .
+        "Email: $email\n" .
+        "Phone: $phone\n\n" .
+        "Message:\n$message\n\n" .
+        "Timestamp: " . date('Y-m-d H:i:s');
+
+    $mail->send();
+
+    // ------------------------------------------------------------
+    // 5. Send receipt to Grant (no message body)
+    // ------------------------------------------------------------
+    $receipt = new PHPMailer(true);
+    $receipt->isSMTP();
+    $receipt->Host       = 'smtp-relay.brevo.com';
+    $receipt->SMTPAuth   = true;
+    $receipt->Username   = 'a9bac6001@smtp-brevo.com';
+    $receipt->Password   = '2R4MKd0GfD09WICj';
+    $receipt->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $receipt->Port       = 587;
+
+    $receipt->setFrom('gtracey@thirtyfold.dev', 'Website Contact Form');
+    $receipt->addAddress('gtracey@thirtyfold.dev');
+
+    $receipt->Subject = "New Submission Received";
+    $receipt->Body    = "A new form submission was received from $name ($email).";
+
+    $receipt->send();
+
+    echo json_encode(['success' => true]);
+
+} catch (Exception $e) {
+    file_put_contents(__DIR__ . '/form-errors.txt', $e->getMessage() . "\n", FILE_APPEND);
+    echo json_encode(['success' => false, 'error' => 'Email failed']);
+}
