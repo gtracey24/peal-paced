@@ -5,16 +5,12 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   const status = document.getElementById("form-status");
   const button = document.getElementById("submit-btn");
 
-  // Honeypot check
-  if (form.website.value !== "") {
-    return; // bot detected
-  }
+  // Honeypot
+  if (form.website.value !== "") return;
 
-  // Timestamp check (must be > 1 second)
+  // Timestamp check
   const ts = parseInt(form.ts.value, 10);
-  if (Date.now() / 1000 - ts < 1) {
-    return; // bot detected
-  }
+  if (Date.now() / 1000 - ts < 1) return;
 
   const data = {
     name: form.name.value.trim(),
@@ -25,12 +21,11 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     ts: form.ts.value
   };
 
-  // Disable button + show sending state
   button.disabled = true;
   status.innerHTML = `<div class="text-muted">Sending...</div>`;
 
   try {
-    const response = await fetch("/dist/php/form-handler.php", {
+    const response = await fetch("php/form-handler.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
@@ -38,16 +33,15 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
     const result = await response.json();
 
-    if (result.status === "success") {
+    if (result.success) {
       status.innerHTML = `<div class="alert alert-success">Message sent successfully!</div>`;
       form.reset();
     } else {
-      status.innerHTML = `<div class="alert alert-danger">${result.message || "Something went wrong."}</div>`;
+      status.innerHTML = `<div class="alert alert-danger">${result.error || "Something went wrong."}</div>`;
     }
   } catch (error) {
     status.innerHTML = `<div class="alert alert-danger">Network error. Try again.</div>`;
   }
 
-  // Re-enable button
   button.disabled = false;
 });
