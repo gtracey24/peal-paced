@@ -83,7 +83,7 @@ try {
     $mail->Port = 587;
 
     $mail->setFrom($smtpUser, 'Website Contact Form');
-    $mail->addAddress('jpeal@jpeal.com');
+    $mail->addAddress('pealpacedtc@gmail.com');
 
     $mail->isHTML(true);
     $mail->Subject = 'New Contact Form Submission';
