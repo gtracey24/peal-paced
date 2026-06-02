@@ -82,7 +82,9 @@ try {
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
-    $mail->setFrom($smtpUser, 'Website Contact Form');
+    // FIXED SENDER
+    $mail->setFrom('gtracey@thirtyfold.dev', 'Website Contact Form');
+
     $mail->addAddress('pealpacedtc@gmail.com'); // Updated recipient
 
     $mail->isHTML(true);
@@ -109,7 +111,9 @@ try {
     $receipt->SMTPSecure = 'tls';
     $receipt->Port = 587;
 
-    $receipt->setFrom($smtpUser, 'JPeal');
+    // FIXED SENDER
+    $receipt->setFrom('gtracey@thirtyfold.dev', 'JPeal');
+
     $receipt->addAddress($email);
 
     $receipt->isHTML(true);
