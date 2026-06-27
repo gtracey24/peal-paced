@@ -83,9 +83,16 @@ try {
     $mail->Port = 587;
 
     // FIXED SENDER
-    $mail->setFrom('gtracey@thirtyfold.dev', 'Website Contact Form');
+$mail->setFrom('gtracey@thirtyfold.dev', 'Website Contact Form');
 
-    $mail->addAddress('pealpacedtc@gmail.com'); // Updated recipient
+// CLIENT RECEIVES THE FORM
+$mail->addAddress('pealpacedtc@gmail.com');
+
+// WHEN CLIENT HITS REPLY → IT GOES TO THE VISITOR
+$mail->addReplyTo($email);
+
+
+
 
     $mail->isHTML(true);
     $mail->Subject = 'New Contact Form Submission';
